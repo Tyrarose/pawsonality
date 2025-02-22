@@ -2,6 +2,10 @@
 
 ## Project setup
 ```
+vue create pawsonality
+cd pawsonality
+code .
+vue add tailwind
 npm install
 ```
 

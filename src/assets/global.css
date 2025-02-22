@@ -1,0 +1,15 @@
+* {
+    /* border: 2px green dotted !important; */
+}
+
+
+body {
+    background-color: #cb5365;
+}
+
+.kern-tight {
+    letter-spacing: 1.1px;
+}
+.kern-normal {
+    letter-spacing: 2px;
+}
