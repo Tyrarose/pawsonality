@@ -1,16 +1,26 @@
 <template>
-    <div class="quiz-container">
-        <transition name="slide-up">
-            <div v-if="currentChapter" class="chapter-content">
-                <h2>{{ currentChapter.title }}</h2>
-                <div class="options-grid">
-                    <div
-                        v-for="(option, index) in currentChapter.options"
-                        :key="index"
-                        class="option-card"
-                        @click="selectOption(option)"
-                    >
-                        {{ option.text }}
+    <div class="container">
+        <!-- Top Progress Bar -->
+        <PawgressBar :chapter="chapter" class="progress-bar"/>
+        <transition name="dissolve" mode="out-in">
+            <div v-if="currentChapter" :key="chapter" class="content-wrapper">
+                <div class="chapter-content">
+                    <h1 class="font-gulfs text-white text-4xl text-center mb-4">
+                        {{ currentChapter.title }}
+                    </h1>
+                    <p class="font-odri text-white text-4xl lg:text-5xl kern-normal leading-[0.7] text-center mb-8">
+                        {{ currentChapter.subtitle }}
+                    </p>
+                    
+                    <div class="options-grid">
+                        <CardsView
+                            v-for="(option, index) in currentChapter.options"
+                            :key="index"
+                            :imageUrl="option.imageUrl"
+                            :text="option.text"
+                            :class="{ 'selected-card': option === selectedOption }"
+                            @click="selectOption(option)"
+                        />
                     </div>
                 </div>
             </div>
@@ -19,83 +29,122 @@
 </template>
 
 <script>
+import CardsView from '@/components/atoms/CardsView.vue';
+import PawgressBar from '@/components/atoms/PawgressBar.vue';
+
 export default {
     name: 'QuizView',
+    components: {
+        CardsView,
+        PawgressBar
+    },
     data() {
         return {
-            chapters: [
-                {
-                    title: 'Chapter 1',
-                    options: [
-                        { text: 'Option 1', nextChapter: 1 },
-                        { text: 'Option 2', nextChapter: 2 }
-                    ]
-                }
-            ],
-            currentChapterIndex: 0
-        }
+            chapter: 0,
+            isTransitioning: false, 
+            quiz: [],
+            selectedOption: null  // Store the clicked option
+        };
     },
     computed: {
         currentChapter() {
-            return this.chapters[this.currentChapterIndex];
+            return this.quiz.find(chapter => chapter.chapter === this.chapter) || null;
         }
     },
     methods: {
         selectOption(option) {
-            if (option.nextChapter !== undefined) {
-                this.currentChapterIndex = option.nextChapter;
+            if (this.isTransitioning) return;
+            
+            this.selectedOption = option; // Store clicked option
+            this.isTransitioning = true;
+
+            // Wait before transitioning (so the card remains visible)
+            setTimeout(() => {
+                if (this.chapter < this.quiz.length - 1) {
+                    this.chapter++; // Move to next question
+                }
+            }, 400); // Delay transition to show selection
+            
+            // Reset selected option AFTER transition completes
+            setTimeout(() => {
+                this.selectedOption = null;
+                this.isTransitioning = false;
+            }, 400); // Allow a smooth transition
+        },
+        async loadQuizData() {
+            try {
+                const response = await fetch('/data/quizData.json');
+                this.quiz = await response.json();
+                console.log('Quiz data loaded:', this.quiz);
+            } catch (error) {
+                console.error('Error loading quiz data:', error);
             }
         }
+    },
+    created() {
+        this.loadQuizData();
     }
-}
+};
 </script>
 
 <style scoped>
-.quiz-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+/* Existing styles remain unchanged */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    margin: auto;
 }
 
 .chapter-content {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
 }
 
 .options-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 100%;
+    margin: auto;
 }
 
-.option-card {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s;
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .options-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 90vw;
+    }
 }
 
-.option-card:hover {
-    transform: translateY(-2px);
-    background: #e8e8e8;
+/* Highlight the selected card before transition */
+.selected-card {
+    transform: scale(1.1);
+    box-shadow: 4 4 8px rgba(0, 0, 0);
+    transition: all 0.3s ease-in-out;
 }
 
-.slide-up-enter-active,
-.slide-up-leave-active {
-    transition: transform 0.5s ease;
+/* Faster Dissolve */
+.dissolve-enter-active {
+    transition: opacity 0.3s ease-in-out;
 }
 
-.slide-up-enter-from,
-.slide-up-leave-to {
-    transform: translateY(100%);
+.dissolve-leave-active {
+    transition: opacity 0.2s ease-in-out;
 }
 
-.slide-up-enter-to,
-.slide-up-leave-from {
-    transform: translateY(0);
+.dissolve-enter-from {
+    opacity: 0.3; /* Start slightly visible */
 }
+
+.dissolve-leave-to {
+    opacity: 0;
+}
+
+
 </style>

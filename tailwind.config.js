@@ -7,6 +7,7 @@ module.exports = {
       fontFamily: {
         odri: ['OdriHandwriting', 'sans-serif'], 
         gulfs: ['GulfsDisplay', 'sans-serif'], 
+        lovelo: ['Lovelo', 'sans-serif'], 
       },
       colors: {  
         'brand-red': '#cb5365', 

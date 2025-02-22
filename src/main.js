@@ -8,6 +8,6 @@ import './assets/tailwind.css'
 import '@fortawesome/fontawesome-free/css/all.css';
 
 
-const app = createApp(App);
-app.use(router); // Use router
-app.mount('#app');
+const app = createApp(App)
+app.use(router)
+app.mount('#app')

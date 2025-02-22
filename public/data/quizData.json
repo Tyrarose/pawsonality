@@ -1,0 +1,138 @@
+[
+    {
+        "chapter": 0,
+        "title": "1 MAGIC DOOR",
+        "subtitle": "You find a glowing door in a tree! Peeking through the keyhole, what excites you the most?",
+        "options": [
+            { "text": "A LIVELY PARTY WITH GAMES AND SNACKS!", "imageUrl": "/images/options/1.webp" },
+            { "text": "A PEACEFUL GARDEN FULL OF MAGICAL CREATURES TO WATCH OVER", "imageUrl": "/images/options/2.webp" },
+            { "text": "A TRAINING GROUND WHERE HEROES LEARN NEW SKILLS!", "imageUrl": "/images/options/3.webp" },
+            { "text": "GIANT TRAMPOLINE PARK WHERE YOU CAN JUMP", "imageUrl": "/images/options/4.webp" }
+        ]
+    },
+    {
+        "chapter": 1,
+        "title": "2 Magical Buddy",
+        "subtitle": "You step through the door and meet a wizard who offers you a companion. Which one do you pick?",
+        "options": [
+            { "text": "A watchful phoenix soaring high above", "imageUrl": "/images/options/5.webp" },
+            { "text": "A wise unicorn who loves solving puzzles", "imageUrl": "/images/options/6.webp" },
+            { "text": "A gentle fairy who gives the best hugs", "imageUrl": "/images/options/7.webp" },
+            { "text": "A playful dragon who knows all the fun tricks!", "imageUrl": "/images/options/8.webp" }
+        ]
+    },
+    {
+        "chapter": 2,
+        "title": "3 Missing Bridge",
+        "subtitle": "Your path leads to a broken rainbow bridge. How will you make it across?",
+        "options": [
+            { "text": "Observe carefully and find the safest way", "imageUrl": "/images/options/9.webp" },
+            { "text": "Take your time and plan every step", "imageUrl": "/images/options/10.webp" },
+            { "text": "Work together to build a new bridge", "imageUrl": "/images/options/11.webp" },
+            { "text": "Find a clever and fun way to bounce across!", "imageUrl": "/images/options/12.webp" }
+        ]
+    },
+    {
+        "chapter": 3,
+        "title": "4 Lost Forest Friends",
+        "subtitle": "As you cross, lost forest creatures appear, looking to you for help. What do you do?",
+        "options": [
+            { "text": "Guide them patiently and calmly", "imageUrl": "/images/options/13.webp" },
+            { "text": "Make it into a fun game while helping!", "imageUrl": "/images/options/14.webp" },
+            { "text": "Keep watch and protect them from danger", "imageUrl": "/images/options/15.webp" },
+            { "text": "Use your smarts to find the quickest route", "imageUrl": "/images/options/16.webp" }
+        ]
+    },
+    {
+        "chapter": 4,
+        "title": "5 Enchanted Party",
+        "subtitle": "After helping, you're invited to a magical forest party! What do you do?",
+        "options": [
+            { "text": "Make sure everyone feels welcome and happy", "imageUrl": "/images/options/17.webp" },
+            { "text": "Find a quiet spot to enjoy from a distance", "imageUrl": "/images/options/18.webp" },
+            { "text": "Show off your cool tricks!", "imageUrl": "/images/options/19.webp" },
+            { "text": "Help set everything up just right", "imageUrl": "/images/options/20.webp" }
+        ]
+    },
+    {
+        "chapter": 5,
+        "title": "6 Sudden Storm!",
+        "subtitle": "Mid-party, a storm rolls in! Everyone looks to you for guidance. What do you do?",
+        "options": [
+            { "text": "Stay calm and guide everyone to safety", "imageUrl": "/images/options/21.webp" },
+            { "text": "Keep watch and protect everyone", "imageUrl": "/images/options/22.webp" },
+            { "text": "Turn it into an adventure and keep spirits high!", "imageUrl": "/images/options/23.webp" },
+            { "text": "Find the quickest and safest route", "imageUrl": "/images/options/24.webp" }
+        ]
+    },
+    {
+        "chapter": 6,
+        "title": "7 Cloud Obstacle",
+        "subtitle": "As the storm clears, a floating path appears. How do you cross it?",
+        "options": [
+            { "text": "Leap across with confidence", "imageUrl": "/images/options/25.webp" },
+            { "text": "Observe and find the safest route", "imageUrl": "/images/options/26.webp" },
+            { "text": "Step carefully, trusting your instincts", "imageUrl": "/images/options/27.webp" },
+            { "text": "Dance your way across for fun!", "imageUrl": "/images/options/28.webp" }
+        ]
+    },
+    {
+        "chapter": 7,
+        "title": "8 Puzzle Challenge!",
+        "subtitle": "At the end of the path, a glowing puzzle blocks your way. How do you solve it?",
+        "options": [
+            { "text": "Use logic and intelligence to figure it out", "imageUrl": "/images/options/29.webp" },
+            { "text": "Defend the puzzle while others work on it", "imageUrl": "/images/options/30.webp" },
+            { "text": "Try every fun and silly solution you can think of!", "imageUrl": "/images/options/31.webp" },
+            { "text": "Work together and combine ideas with friends", "imageUrl": "/images/options/32.webp" },
+            { "text": "Stay calm and think it through carefully", "imageUrl": "/images/options/33.webp" }
+        ]
+    },
+    {
+        "chapter": 8,
+        "title": "9 Hidden Treasure",
+        "subtitle": "Solving the puzzle reveals a locked treasure chest! How do you open it?",
+        "options": [
+            { "text": "Study the lock and figure out how to unlock it", "imageUrl": "/images/options/34.webp" },
+            { "text": "Use your strength to break it open!", "imageUrl": "/images/options/35.webp" },
+            { "text": "Try a fun spell and see what happens!", "imageUrl": "/images/options/36.webp" },
+            { "text": "Stand guard while someone else solves it", "imageUrl": "/images/options/37.webp" },
+            { "text": "Work together with friends to solve it!", "imageUrl": "/images/options/32.webp" }
+        ]
+    },
+    {
+        "chapter": 9,
+        "title": "10 Lost Puppy",
+        "subtitle": "Inside the chest, you don’t find gold—but a small, lost puppy! What do you do?",
+        "options": [
+            { "text": "Gently guide them home with patience", "imageUrl": "/images/options/38.webp" },
+            { "text": "Protect them from any dangers along the way", "imageUrl": "/images/options/39.webp" },
+            { "text": "Lead them on a fun adventure home!", "imageUrl": "/images/options/40.webp" },
+            { "text": "Comfort them with cuddles and kindnesst", "imageUrl": "/images/options/41.webp" },
+            { "text": "Use your smarts to find the fastest way home", "imageUrl": "/images/options/42.webp" }
+        ]
+    },
+    {
+        "chapter": 10,
+        "title": "11 Magical Snowstorm",
+        "subtitle": "After your decision, a sudden snowfall transforms the forest! How do you handle it?",
+        "options": [
+            { "text": "Keep everyone warm and safe", "imageUrl": "/images/options/43.webp" },
+            { "text": "Find the safest path through the snow", "imageUrl": "/images/options/44.webp" },
+            { "text": "Start a snowball fight and make it fun!", "imageUrl": "/images/options/45.webp" },
+            { "text": "Push forward and lead the way!", "imageUrl": "/images/options/46.webp" },
+            { "text": " Stay close and ensure no one gets lost", "imageUrl": "/images/options/47.webp" }
+        ]
+    },
+    {
+        "chapter": 11,
+        "title": "12 Magic Gift!",
+        "subtitle": "At journey’s end, the wizard reappears with a special reward! Which do you choose?",
+        "options": [
+            { "text": "A magical watch that helps protect friends", "imageUrl": "/images/options/48.webp" },
+            { "text": "A charm that brings peace and calm to everyone", "imageUrl": "/images/options/49.webp" },
+            { "text": "A hero’s cape that grants bravery and strength", "imageUrl": "/images/options/50.webp" },
+            { "text": "A playful wand that creates fun and surprises", "imageUrl": "/images/options/51.webp" }
+        ]
+    }
+]
