@@ -2,281 +2,416 @@
     {
         "chapter": 1,
         "title": "1 Golden Visitor",
-        "subtitle": "One morning, a golden butterfly lands on your windowsill... What do you do?",
+        "subtitle": "One morning, a butterfly lands on your window... What do you do?",
         "imageUrl": "/images/options/1.gif",
         "options": [
             { 
                 "text": "Dash after it!", 
                 "trait": "P",
-                "response": "You bolt outside, but whoa—this little guy is fast! Your friend laughs, 'Chill! It’s not a race!'"
+                "next": "You sprint outside, but the butterfly flutters just out of reach. It's like it's teasing you!",
+                "friend": "😆 'Whoa, slow down! You trying to race a butterfly now?'"
             },
             { 
                 "text": "Chill and watch.", 
                 "trait": "C",
-                "response": "You lean on the windowsill, just watching. Your friend whispers, 'It’s like a tiny golden dream…'"
+                "next": "You lean on the windowsill, watching as it flaps its golden wings, almost like it's saying hello.",
+                "friend": "😊 'Kinda feels like a tiny piece of sunshine, huh?'"
             },
             { 
-                "text": "Check if it’s safe.", 
+                "text": "Check if it's safe.", 
                 "trait": "W",
-                "response": "You stay put, making sure it’s okay first. Your friend nods, 'Smart move, we don’t wanna scare it!'"
+                "next": "You observe carefully—its wings seem fine, and it's just resting there. No danger.",
+                "friend": "👍 'Smart move. No sudden moves, or we'll spook it!'"
             },
             { 
                 "text": "Try to play!", 
                 "trait": "M",
-                "response": "You reach out, wiggling your fingers like butterfly antennae. Your friend giggles, 'Think it wants to play tag?'"
+                "next": "You wiggle your fingers, mimicking its tiny movements. It flutters in response—maybe it really is playing?",
+                "friend": "😂 'Okay, okay! But what if it actually understands you?!'"
             }
         ]
     },
     {
         "chapter": 2,
         "title": "2 A Friend in Need",
-        "subtitle": "You see your friend sitting alone under a tree... What do you do?",
+        "subtitle": "Following the golden butterfly outside, you see your friend sitting alone under a tree... What do you do?",
         "imageUrl": "/images/options/2.gif",
         "options": [
             { 
-                "text": "Big ol’ hug!", 
+                "text": "Big ol' hug!", 
                 "trait": "A",
-                "response": "You tackle-hug them! They laugh, 'Okay, okay, I feel better already!'"
+                "next": "You wrap them in a bear hug, squeezing tight. They stiffen for a second—then relax.",
+                "friend": "😅 'Okay, okay! I get it! You're secretly a hug monster!'"
             },
             { 
                 "text": "Goofy dance!", 
                 "trait": "M",
-                "response": "You bust out your silliest moves. Your friend snorts, 'Okay, that was ridiculous… but kinda amazing.'"
+                "next": "You start moving like a complete goofball. It's ridiculous… and completely effective.",
+                "friend": "😂 'STOP— I can't— breathe— from laughing!'"
             },
             { 
                 "text": "Sit and vibe.", 
                 "trait": "D",
-                "response": "You sit beside them without a word. After a moment, they smile. 'Thanks for just being here.'"
+                "next": "You sit beside them, saying nothing. Sometimes, silence speaks the loudest.",
+                "friend": "🙂 '...Thanks. I needed that.'"
             },
             { 
-                "text": "Show ‘em the butterfly!", 
+                "text": "Show 'em the butterfly!", 
                 "trait": "I",
-                "response": "You point to the butterfly. 'See that? Magic’s real.' Your friend sighs. 'Maybe you’re right…'"
+                "next": "You point at the butterfly. Its golden wings shimmer in the sunlight.",
+                "friend": "😌 'You think it's a sign? Like… maybe things will be okay?'"
             }
         ]
     },
     {
         "chapter": 3,
         "title": "3 The Glinting Mystery",
-        "subtitle": "Something shiny is stuck in the tree roots... What’s your move?",
+        "subtitle": "While hanging out with your friend, something shiny catches your eye in the tree roots... Whachudu?",
         "imageUrl": "/images/options/3.gif",
         "options": [
             { 
                 "text": "Dig it up!", 
                 "trait": "P",
-                "response": "You dig furiously! Your friend cheers, 'Go, go, go! You got this!'"
+                "next": "You start digging like your life depends on it. The shiny thing gets clearer!",
+                "friend": "🤩 'GO GO GO! You're like a treasure hunter!'"
             },
             { 
                 "text": "Look for clues.", 
                 "trait": "I",
-                "response": "You examine the area carefully. Your friend nods, 'Sherlock vibes. I respect it.'"
+                "next": "You examine the ground carefully. There's something odd about how it's buried…",
+                "friend": "🧐 'Ooooh, detective mode activated!'"
             },
             { 
                 "text": "Call the squad!", 
                 "trait": "S",
-                "response": "You yell, 'Guys, check this out!' Your friend grins, 'Ooo, mystery time!'"
+                "next": "You wave your arms. 'Guys, check this out!' Soon, everyone is gathered around.",
+                "friend": "😆 'Ohhh, now it's a group mystery. Love it!'"
             },
             { 
                 "text": "Just grab it!", 
                 "trait": "B",
-                "response": "You yank it out! Your friend gasps, 'Whoa, no hesitation. Respect.'"
+                "next": "No hesitation. You reach in and yank it out—whatever it is, it's yours now!",
+                "friend": "😳 'Whoa, okay, that was bold!'"
             }
         ]
     },
     {
         "chapter": 4,
         "title": "4 The Key and the Paw Prints",
-        "subtitle": "It’s a key! And paw prints nearby… What now?",
+        "subtitle": "After digging around the roots, you find a mysterious key! And there are fresh paw prints nearby… What now?",
         "imageUrl": "/images/options/4.gif",
         "options": [
             { 
-                "text": "Track ‘em down!", 
+                "text": "Track 'em down!", 
                 "trait": "I",
-                "response": "You study the prints. 'Hmmm…' Your friend whispers, 'Detective mode activated!'"
+                "next": "You crouch to examine the prints. They lead deeper into the trees…",
+                "friend": "🕵️ 'Detective mode: engaged! Let's crack this case!'"
             },
             { 
                 "text": "Follow for fun!", 
                 "trait": "P",
-                "response": "You bounce ahead, following the prints. Your friend laughs, 'Wait up, speedy!'"
+                "next": "You excitedly follow the tracks, not worrying where they lead.",
+                "friend": "😆 'Wait up, you speed demon!'"
             },
             { 
                 "text": "Squad up first!", 
                 "trait": "S",
-                "response": "You gather the crew. 'We roll as a team!' Your friend fist-bumps you, 'Squad goals!'"
+                "next": "You gather everyone. No adventure should be tackled alone!",
+                "friend": "✊ 'Yes! Team adventure, let's do this!'"
             },
             { 
                 "text": "Lead the way!", 
                 "trait": "H",
-                "response": "You march ahead. Your friend salutes, 'Fearless leader reporting for duty!'"
+                "next": "You take charge and start walking. If there's a mystery, you'll be the first to face it.",
+                "friend": "🫡 'Captain, I await your orders!'"
             }
         ]
     },
     {
         "chapter": 5,
         "title": "5 The Vined Gate",
-        "subtitle": "The paw prints lead to an old gate covered in vines… What do you do?",
+        "subtitle": "Following the mysterious paw prints through the trees leads you to an old gate covered in vines… What do you do?",
         "imageUrl": "/images/options/5.gif",
         "options": [
             { 
                 "text": "Check around first.", 
                 "trait": "W",
-                "response": "You scan the area. Your friend whispers, 'Good idea, what if it’s a magic trap?!'"
+                "next": "You take a moment to look around. No signs of danger… but the air feels different here.",
+                "friend": "😐 'What if this is, like, some ancient trap?'"
             },
             { 
                 "text": "Clear the vines!", 
                 "trait": "H",
-                "response": "You start yanking vines. Your friend helps, 'Jungle cleanup crew, let’s go!'"
+                "next": "You start pulling at the vines, revealing an old, rusted lock underneath.",
+                "friend": "💪 'Jungle cleanup squad, reporting for duty!'"
             },
             { 
                 "text": "Figure out the lock.", 
                 "trait": "I",
-                "response": "You study the lock. Your friend mutters, 'Bet it needs, like, secret words or something…'"
+                "next": "You inspect the lock closely. It definitely looks like it needs that key…",
+                "friend": "🤔 'Bet it's not just a regular lock. Maybe a puzzle?'"
             },
             { 
                 "text": "Jingle it around!", 
                 "trait": "P",
-                "response": "You shake the key. Your friend giggles, 'Nice. Maybe it’s a dance-powered door?'"
+                "next": "You shake the key in front of the lock, hoping for some magic effect.",
+                "friend": "😂 'Yeah, just wiggle it enough and maybe it'll open by itself!'"
             }
         ]
     },
-    
     {
         "chapter": 6,
         "title": "6 The Hidden Garden",
-        "subtitle": "The gate creaks open to a secret garden! But… rustling sounds?",
+        "subtitle": "The key fits perfectly! As the gate creaks open, you discover a secret garden, but there are strange rustling sounds... What do you do?",
         "imageUrl": "/images/options/6.gif",
         "options": [
             { 
                 "text": "Stand guard!", 
                 "trait": "D",
-                "response": "You hold up a stick like a sword. Your friend whispers, 'Protect the garden at all costs!'"
+                "next": "You grab a sturdy branch and hold your ground. Whatever's rustling, it won't catch you off guard.",
+                "friend": "🫣 'Okay, bodyguard mode. I feel safer already!'"
             },
             { 
                 "text": "Make it a game!", 
                 "trait": "M",
-                "response": "You crouch and whisper, 'We’re in a stealth mission!' Your friend grins, 'Operation: Fun Mode activated!'"
+                "next": "You whisper, 'Stealth mission time!' and crouch behind some bushes.",
+                "friend": "😆 'Operation: Sneaky Snoopers is a go!'"
             },
             { 
                 "text": "Clear the path!", 
                 "trait": "H",
-                "response": "You push aside branches. Your friend helps, 'No obstacle shall stop us!'"
+                "next": "You push aside some branches, making room for a better view.",
+                "friend": "🙌 'Pathfinder status: unlocked!'"
             },
             { 
                 "text": "Stick together!", 
                 "trait": "S",
-                "response": "You motion to stay close. Your friend nods, 'Yeah, I’m not getting lost in some magic garden!'"
+                "next": "You motion for everyone to stay close. Safety in numbers, after all.",
+                "friend": "😬 'Yeah, not about to get lost in some enchanted forest!'"
             }
         ]
     },
     {
         "chapter": 7,
-        "title": "7 The Fountain’s Secret",
-        "subtitle": "Something’s shining at the bottom of an old fountain… What’s the plan?",
+        "title": "7 The Fountain's Secret",
+        "subtitle": "As you explore the overgrown garden, you spot something mysterious at the bottom of an old fountain… What's the plan?",
         "imageUrl": "/images/options/7.gif",
         "options": [
             { 
                 "text": "Jump in!", 
                 "trait": "B",
-                "response": "You splash in without a thought! Your friend gasps, 'No hesitation! Absolute legend!'"
+                "next": "You don't think twice—SPLASH! You're now knee-deep in mystery.",
+                "friend": "😳 'DID YOU JUST— okay, wow, respect!'"
             },
             { 
                 "text": "Get it safely.", 
                 "trait": "H",
-                "response": "You roll up your sleeves. Your friend nods, 'Okay, smart move. No swamp monster grabby hands today!'"
+                "next": "You roll up your sleeves and reach in carefully. No unnecessary risks.",
+                "friend": "😌 'Yeah, let's NOT test if there's a swamp monster down there…'"
             },
             { 
                 "text": "Teamwork time!", 
                 "trait": "D",
-                "response": "You and your friend link arms. 'Together!' Your friend grins, 'Ultimate duo power!'"
+                "next": "You and your friend work together to reach the shining object.",
+                "friend": "💪 'Teamwork makes the dream work!'"
             },
             { 
                 "text": "Keep spirits up!", 
                 "trait": "A",
-                "response": "You cheer, 'We got this!' Your friend smiles, 'Okay, okay, let’s do it!'"
+                "next": "You cheer, 'We got this!' The excitement is contagious.",
+                "friend": "😁 'Okay, okay! I'm feeling the hype now!'"
             }
         ]
     },
     {
         "chapter": 8,
         "title": "8 The Coming Storm",
-        "subtitle": "Thunder rumbles as you grab a mysterious map… What now?",
+        "subtitle": "Just as you retrieve a mysterious map from the fountain, thunder rumbles overhead… What now?",
         "imageUrl": "/images/options/8.gif",
         "options": [
             { 
                 "text": "Stand tall!", 
                 "trait": "B",
-                "response": "You puff out your chest, 'A little thunder never scared me!' Your friend smirks, 'Okay, hero mode.'"
+                "next": "You stare down the storm like a hero in an epic tale.",
+                "friend": "😆 'Alright, main character energy!'"
             },
             { 
                 "text": "Find shelter.", 
                 "trait": "W",
-                "response": "You look for cover. Your friend sighs, 'Yeah, I’d rather not be a human lightning rod…'"
+                "next": "You quickly look for a safe place to wait it out.",
+                "friend": "😬 'Yeah, I'd rather not become a lightning rod today…'"
             },
             { 
                 "text": "Calm the crew.", 
                 "trait": "A",
-                "response": "You pat your friend’s shoulder, 'We got this.' They take a deep breath. 'Okay… yeah, you’re right.'"
+                "next": "You reassure everyone, reminding them that storms always pass.",
+                "friend": "🙂 'You always know what to say, huh?'"
             },
             { 
-                "text": "Eh, it’s just rain.", 
+                "text": "Eh, it's just rain.", 
                 "trait": "C",
-                "response": "You shrug, 'It’s just a free shower!' Your friend snorts, 'Alright, rain enthusiast.'"
+                "next": "You stretch out your hands—free shower! No big deal.",
+                "friend": "😂 'Rain enthusiast over here!'"
             }
         ]
     },
     {
         "chapter": 9,
         "title": "9 The Cozy Cave",
-        "subtitle": "The map leads to a cave to wait out the storm… How do you chill?",
+        "subtitle": "The rain starts falling heavily, but the map shows a nearby cave where you can stay dry… How do you chill?",
         "imageUrl": "/images/options/9.gif",
         "options": [
             { 
                 "text": "Guard duty.", 
                 "trait": "W",
-                "response": "You stand at the entrance like a knight. Your friend laughs, 'Brave warrior of… cozy caves?'"
+                "next": "You stand at the entrance, just in case something unexpected happens.",
+                "friend": "🛡️ 'Knight of the Cozy Cave, I salute you!'"
             },
             { 
                 "text": "Story time!", 
                 "trait": "A",
-                "response": "You start telling an epic tale. Your friend leans in, 'Ooo, keep going!'"
+                "next": "You launch into an epic tale, your friend listening intently.",
+                "friend": "😮 'Ooooh, keep going!'"
             },
             { 
                 "text": "Just relax.", 
                 "trait": "C",
-                "response": "You stretch out on the ground. Your friend flops beside you, 'This is actually kinda nice.'"
+                "next": "You stretch out on the cave floor, soaking in the peaceful sounds of rain.",
+                "friend": "😌 'Kinda nice, actually.'"
             },
             { 
                 "text": "Make it fun!", 
                 "trait": "M",
-                "response": "You pick up rocks and start stacking them. Your friend joins in, 'Cave rock art competition, let’s go!'"
+                "next": "You start stacking rocks into little towers.",
+                "friend": "😂 'Cave rock art contest? You're on!'"
             }
         ]
     },
     {
         "chapter": 10,
-        "title": "10 The Rainbow Path Home",
-        "subtitle": "The sun’s back, showing a rainbow path home… How do you feel?",
+        "title": "10 The Treasure Awakens",
+        "subtitle": "As the storm clears, you check the map again and notice an X marking this very spot! What's next?",
         "imageUrl": "/images/options/10.gif",
         "options": [
             { 
-                "text": "Let’s explore more!", 
+                "text": "Dig right in!", 
                 "trait": "B",
-                "response": "You bounce ahead. Your friend grins, 'Guess we’re never going home, huh?'"
+                "next": "You grab a stick and start digging. Time to see what's buried!",
+                "friend": "😆 'Treasure hunter mode: activated!'"
             },
             { 
-                "text": "Glad we stuck together!", 
-                "trait": "D",
-                "response": "You smile at your friend. 'Wouldn’t have done this without you.' They nod, 'Same, this was awesome.'"
+                "text": "Be cautious.", 
+                "trait": "W",
+                "next": "You scan the area first. Could be a trap, after all.",
+                "friend": "😳 'Ooooh, good thinking. What if it's cursed?!'"
             },
             { 
-                "text": "Can’t wait to tell!", 
+                "text": "Work together!", 
                 "trait": "S",
-                "response": "You wave the map, 'Dude, we have THE best story!' Your friend laughs, 'They won’t believe us!'"
+                "next": "You and your friend take turns digging. Team effort!",
+                "friend": "💪 'Double the hands, double the speed!'"
             },
             { 
-                "text": "Proud of us!", 
-                "trait": "H",
-                "response": "You take a deep breath, 'We actually did it.' Your friend grins, 'Heck yeah, we did!'"
+                "text": "Make it exciting!", 
+                "trait": "M",
+                "next": "You pretend to be a pirate captain, commanding the dig.",
+                "friend": "🏴‍☠️ 'Aye aye, cap'n! Let's find some gold!'"
+            }
+        ]
+    },
+    {
+        "chapter": 11,
+        "title": "11 The Chest of Echoes",
+        "subtitle": "Your digging pays off as you uncover an ancient chest, but suddenly it starts speaking?!",
+        "imageUrl": "/images/options/11.gif",
+        "options": [
+            { 
+                "text": "Open it fast!", 
+                "trait": "P",
+                "next": "You throw the lid open—let's see what's inside!",
+                "friend": "😆 'Mystery chest, here we go!'"
+            },
+            { 
+                "text": "Talk to it.", 
+                "trait": "I",
+                "next": "You cautiously ask, 'Uh… hello?'",
+                "friend": "🤨 'Okay, but what if it talks back?!'"
+            },
+            { 
+                "text": "Knock first!", 
+                "trait": "M",
+                "next": "You give it a friendly knock. Might as well be polite.",
+                "friend": "😂 'Are we seriously knocking on a chest right now?!'"
+            },
+            { 
+                "text": "Let your friend decide.", 
+                "trait": "S",
+                "next": "You turn to your friend. 'Your call!'",
+                "friend": "😮 'Oh wow, uh, okay… no pressure!'"
+            }
+        ]
+    },
+    {
+        "chapter": 12,
+        "title": "12 The Final Choice",
+        "subtitle": "The chest opens on its own, revealing a glowing stone that speaks to you: 'What do you seek?'",
+        "imageUrl": "/images/options/12.gif",
+        "options": [
+            { 
+                "text": "Adventure!", 
+                "trait": "P",
+                "next": "The stone hums, and suddenly… a new map appears in your hands!",
+                "friend": "😆 'More quests? Heck yes!'"
+            },
+            { 
+                "text": "Wisdom.", 
+                "trait": "I",
+                "next": "The stone glows, filling your mind with stories of the past.",
+                "friend": "🤯 'Whoa… did you just time-travel in your brain?'"
+            },
+            { 
+                "text": "Friendship.", 
+                "trait": "S",
+                "next": "The stone vanishes, leaving behind a bracelet for both of you.",
+                "friend": "🥹 'Okay, not gonna lie, that's kinda beautiful.'"
+            },
+            { 
+                "text": "Mystery!", 
+                "trait": "M",
+                "next": "The stone bursts into a swirl of colors, revealing another hidden path…",
+                "friend": "😮 'Wait—there's more?! Let's go!!'"
+            }
+        ]
+    },
+    {
+        "chapter": 13,
+        "title": "13 The Journey Continues…",
+        "subtitle": "After receiving your magical reward, you look at each other, ready to head home... or are you?",
+        "imageUrl": "/images/options/13.gif",
+        "options": [
+            { 
+                "text": "Head home, satisfied.", 
+                "trait": "C",
+                "next": "You smile. This was an adventure to remember.",
+                "friend": "😌 'Best. Day. Ever.'"
+            },
+            { 
+                "text": "Plan the next quest!", 
+                "trait": "P",
+                "next": "You pull out your journal, already plotting the next journey.",
+                "friend": "😂 'Oh boy, here we go again!'"
+            },
+            { 
+                "text": "Reflect on the journey.", 
+                "trait": "I",
+                "next": "You take a deep breath, thinking about everything you've learned.",
+                "friend": "🙂 'Kinda wild how much we discovered, huh?'"
+            },
+            { 
+                "text": "Celebrate!", 
+                "trait": "A",
+                "next": "You and your friend high-five. This adventure deserves a party!",
+                "friend": "🥳 'YES! Adventure celebration time!'"
             }
         ]
     }

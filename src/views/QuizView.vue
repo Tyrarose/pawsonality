@@ -25,13 +25,15 @@
 
                     <div class="options-grid">
                         <CardsView
-                            v-for="(option, index) in currentChapter.options"
-                            :key="index"
-                            :text="option.text"
-                            :response="option.response"
-                            :flipped="option === selectedOption"
-                            @click="selectOption(option)"
-                        />
+    v-for="(option, index) in currentChapter.options"
+    :key="index"
+    :text="option.text"
+    :friend="option.friend"
+    :flipped="option === selectedOption"
+    :readingTime="Math.max(2, option.friend.length / 10)"
+    @click="selectOption(option)"
+/>
+
                     </div>
                 </div>
             </div>
@@ -55,7 +57,8 @@ export default {
             isTransitioning: false, 
             quiz: [],
             selectedOption: null,
-            selectedTraits: [] // Store selected traits
+            selectedTraits: [], // Store selected traits
+            readingTimeout: 3000 // Default fallback reading time
         };
     },
     computed: {
@@ -65,21 +68,28 @@ export default {
     },
     methods: {
         selectOption(option) {
-            if (this.isTransitioning) return;
+        if (this.isTransitioning) return;
 
-            this.selectedOption = option;
-            this.selectedTraits.push(option.trait); // Store the trait
-            this.isTransitioning = true;
+        this.selectedOption = option;
+        this.selectedTraits.push(option.trait);
+        this.isTransitioning = true;
 
-            // Delay transition to next chapter to allow animation to play
+        // Ensure readingTime is calculated before transition
+        const readingTime = Math.max(2, option.friend.length / 10) * 1000; // Convert to ms
+
+        console.log(`Reading time: ${readingTime / 1000} seconds`);
+
+        // Wait for the card to visually flip before starting the timeout
+        this.$nextTick(() => {
             setTimeout(() => {
                 if (this.chapter < this.quiz.length) {
                     this.chapter++;
                     this.selectedOption = null;
                 }
                 this.isTransitioning = false;
-            }, 3000); // Delay to allow response to be read
-        },
+            }, readingTime);
+        });
+    },
         async loadQuizData() {
             try {
                 const response = await fetch('/data/quizData.json');
@@ -95,6 +105,7 @@ export default {
     }
 };
 </script>
+
 
 <style scoped>
 /* Main Container */
@@ -148,7 +159,7 @@ export default {
 /* Flipped & Enlarged Card */
 .flipped-card {
     transform: scale(1.2) rotateY(180deg);
-    transition: transform 0.6s ease-in-out;
+    transition: transform 2s ease-in-out;
 }
 
 /* Faster Dissolve */

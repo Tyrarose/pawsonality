@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     totalPaws() {
-      return 5; // Show all 6 paw slots
+      return 6; // Show all 6 paw slots
     },
     fullPaws() {
       return Math.floor(this.chapter / 2); // Every 2 chapters = 1 full paw

@@ -1,6 +1,11 @@
 <template>
     <div class="card-wrapper" @click="handleClick">
         <div class="card" :class="{ flipped: flipped }">
+            <!-- Progress Bar (Appears when flipped) -->
+            <div v-if="flipped" class="progress-bar">
+                <div class="progress-bar-fill" :style="{ animationDuration: readingTime + 's' }"></div>
+            </div>
+
             <!-- Card Front -->
             <div class="card-face card-front">
                 <p class="font-lovelo text-brand-brown text-center text-md lg:text-lg leading-tight">
@@ -11,7 +16,7 @@
             <!-- Card Back -->
             <div class="card-face card-back">
                 <p class="font-lovelo text-white text-center text-md lg:text-lg leading-tight">
-                    {{ response }}
+                    {{ friend }}
                 </p>
             </div>
         </div>
@@ -23,13 +28,16 @@ export default {
     name: 'CardsView',
     props: {
         text: String,
-        response: String,
-        flipped: Boolean
+        friend: String,
+        flipped: Boolean,
+        readingTime: Number // Pass readingTime from parent
     },
     methods: {
         handleClick() {
             if (!this.flipped) {
-                this.$emit('click');
+                const audio = new Audio('/sounds/mouse-click.mp3');
+                audio.play();
+                this.$emit('click', this.readingTime); // Pass readingTime up
             }
         }
     }
@@ -37,9 +45,9 @@ export default {
 </script>
 
 <style scoped>
-/* Wrapper to prevent perspective issues */
+/* Wrapper for 3D flip effect */
 .card-wrapper {
-    perspective: 1000px; /* Adds 3D depth */
+    perspective: 1000px;
     cursor: pointer;
 }
 
@@ -49,7 +57,7 @@ export default {
     min-height: 140px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.6s ease-in-out;
+    transition: transform 1s ease-in-out; /* Slower flip animation */
 }
 
 /* Flip the card when 'flipped' class is applied */
@@ -66,20 +74,46 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    backface-visibility: hidden; /* Hides the back while front is shown */
+    backface-visibility: hidden;
     padding: 1rem;
 }
 
 /* Styling for Front */
 .card-front {
-    background-color: #f3e9dc;
-    color: #5a3e2b;
+    @apply bg-brand-cards text-brand-brown;
 }
 
 /* Styling for Back */
 .card-back {
-    background-color: #5a3e2b;
-    color: #f3e9dc;
+    @apply bg-brand-brown text-brand-cards;
     transform: rotateY(180deg);
+}
+
+/* Progress Bar */
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 100%;
+    @apply bg-brand-cards;
+    animation: progress-fill linear forwards;
+}
+
+@keyframes progress-fill {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
 }
 </style>
