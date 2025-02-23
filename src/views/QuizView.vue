@@ -8,15 +8,24 @@
                     <h1 class="font-gulfs text-white text-4xl text-center mb-4">
                         {{ currentChapter.title }}
                     </h1>
-                    <p class="font-odri text-white text-4xl lg:text-5xl kern-normal leading-[0.7] text-center mb-8">
+                    <p class="font-odri text-white text-4xl lg:text-6xl kern-normal leading-[0.7] text-center mb-8">
                         {{ currentChapter.subtitle }}
                     </p>
-                    
+
+                    <!-- Image/GIF Section -->
+                    <div v-if="currentChapter.imageUrl" class="media-wrapper">
+                        <img 
+                            :src="currentChapter.imageUrl" 
+                            :alt="currentChapter.title"
+                            class="media"
+                            :key="currentChapter.imageUrl"
+                        />
+                    </div>
+
                     <div class="options-grid">
                         <CardsView
                             v-for="(option, index) in currentChapter.options"
                             :key="index"
-                            :imageUrl="option.imageUrl"
                             :text="option.text"
                             :class="{ 'selected-card': option === selectedOption }"
                             @click="selectOption(option)"
@@ -43,7 +52,7 @@ export default {
             chapter: 0,
             isTransitioning: false, 
             quiz: [],
-            selectedOption: null  // Store the clicked option
+            selectedOption: null // Store the clicked option
         };
     },
     computed: {
@@ -58,14 +67,12 @@ export default {
             this.selectedOption = option; // Store clicked option
             this.isTransitioning = true;
 
-            // Wait before transitioning (so the card remains visible)
             setTimeout(() => {
                 if (this.chapter < this.quiz.length - 1) {
                     this.chapter++; // Move to next question
                 }
             }, 400); // Delay transition to show selection
             
-            // Reset selected option AFTER transition completes
             setTimeout(() => {
                 this.selectedOption = null;
                 this.isTransitioning = false;
@@ -88,7 +95,7 @@ export default {
 </script>
 
 <style scoped>
-/* Existing styles remain unchanged */
+/* Main Container */
 .container {
     display: flex;
     flex-direction: column;
@@ -99,12 +106,26 @@ export default {
     margin: auto;
 }
 
+/* Chapter Content */
 .chapter-content {
     max-width: 800px;
     width: 100%;
     text-align: center;
 }
 
+/* Media (Image/GIF) Section */
+.media-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.media {
+    max-width: 100%;
+    max-height: 180px;
+}
+
+/* Options Grid */
 .options-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -125,13 +146,13 @@ export default {
 /* Highlight the selected card before transition */
 .selected-card {
     transform: scale(1.1);
-    box-shadow: 4 4 8px rgba(0, 0, 0);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
 }
 
 /* Faster Dissolve */
 .dissolve-enter-active {
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-out;
 }
 
 .dissolve-leave-active {
@@ -139,12 +160,10 @@ export default {
 }
 
 .dissolve-enter-from {
-    opacity: 0.3; /* Start slightly visible */
+    opacity: 0.3;
 }
 
 .dissolve-leave-to {
     opacity: 0;
 }
-
-
 </style>

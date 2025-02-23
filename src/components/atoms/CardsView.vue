@@ -4,19 +4,10 @@
         :class="{ 'clicked': isClicked }"
         @click="handleClick"
     >
-        <div class="bg-brand-cards rounded-lg p-2 flex flex-col items-center justify-between">
-            <div class="image-section flex justify-center items-center h-24 lg:h-32 w-full">
-                <img 
-                    :src="imageUrl" 
-                    :alt="text"
-                    class="max-w-full max-h-full object-contain"
-                />
-            </div>
-            <div class="text-section">
-                <p class="font-lovelo text-brand-brown text-center text-xs lg:text-lg leading-tight">
-                    {{ text }}
-                </p>
-            </div>
+        <div class="bg-brand-cards rounded-lg p-4 flex items-center justify-center">
+            <p class="font-lovelo text-brand-brown text-center text-md lg:text-lg leading-tight">
+                {{ text }}
+            </p>
         </div>
     </div>
 </template>
@@ -25,10 +16,6 @@
 export default {
     name: 'CardsView',
     props: {
-        imageUrl: {
-            type: String,
-            required: true
-        },
         text: {
             type: String,
             required: true
@@ -61,32 +48,20 @@ export default {
     transition: all 0.15s ease-in-out;
 }
 
+/* Increase card size */
 .card-container > div {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 190px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Increase min-height for desktop */
+/* Larger card height on desktop */
 @media (min-width: 1024px) {
     .card-container > div {
-        min-height: 220px;
+        min-height: 140px;
     }
-}
-
-
-.image-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.text-section {
-    padding: 0.5rem;
-}
-
-.text-section p {
-    color: #8B4513;
 }
 
 .clicked {

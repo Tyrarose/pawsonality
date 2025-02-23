@@ -18,6 +18,8 @@ export default {
     const h6Text1 = ref('')
     const h6Text2 = ref('')
     const showButton = ref(false)
+    const buttonClicked = ref(false)
+    const showScreen = ref(true) // Controls visibility of the welcome screen
 
     const typeText = (target, text, speed, callback) => {
       let i = 0
@@ -42,34 +44,43 @@ export default {
     })
 
     const goToQuiz = () => {
+      buttonClicked.value = true
+      
       router.push('/quiz')
     }
 
-    return { h1Text, h6Text1, h6Text2, showButton, goToQuiz }
+    return { h1Text, h6Text1, h6Text2, showButton, goToQuiz, buttonClicked, showScreen }
   }
 }
 </script>
 
 <template>
-  <section class="bg-brand-red min-h-screen flex items-center justify-center">
+  <section v-if="showScreen" class="bg-brand-red mt-20 flex items-center justify-center">
     <div class="container m-6 text-center space-y-12"> 
       <img 
         src="/images/dog.png" 
         alt="dog logo" 
         class="object-contain w-40 h-40 mx-auto tilting-dog"
       />
-      <h1 class="font-gulfs kern-tight text-white text-4xl">{{ h1Text }}</h1>
-      <div class="space-y-6">
+      <h1 v-if="!buttonClicked" class="font-gulfs kern-tight text-white text-4xl">{{ h1Text }}</h1>
+      <div v-if="!buttonClicked" class="space-y-6">
         <h6 class="font-odri kern-normal leading-tight text-white text-4xl">{{ h6Text1 }}</h6>
         <h6 class="font-odri kern-normal text-white text-4xl leading-[0.6]">{{ h6Text2 }}</h6>
       </div>
-      <ButtonAtom 
+      <div 
         v-if="showButton" 
-        class="mx-auto mt-12 slide-in-button"
-        buttonText="Let’s go on an adventure!" 
-        icon="fa fa-play" 
-        @click="goToQuiz" 
-      />
+        class="relative flex justify-center items-center"
+      >
+        <ButtonAtom 
+          v-if="!buttonClicked" 
+          class="mx-auto mt-12 slide-in-button" 
+          :class="{ 'expand-button': buttonClicked }"
+          buttonText="Let’s go on an adventure!" 
+          icon="fa fa-play" 
+          @click="goToQuiz"
+        />
+        <div v-if="buttonClicked" class="expanding-circle"></div>
+      </div>
     </div>
   </section>
 </template>
@@ -102,6 +113,41 @@ export default {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Expanding Circle Animation */
+.expanding-circle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: var(--button-color, #fff);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: expand-circle 0.8s ease-out forwards, fade-out 0.8s ease-out 0.8s forwards;
+}
+
+/* Circle Expansion */
+@keyframes expand-circle {
+  0% {
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    width: 500vw;
+    height: 500vw;
+  }
+}
+
+/* Fade Out Effect */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 </style>

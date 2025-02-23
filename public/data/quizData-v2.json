@@ -1,0 +1,122 @@
+[
+    {
+        "chapter": 0,
+        "title": "1 Golden Visitor",
+        "subtitle": "One morning, a golden butterfly lands on your windowsill... What do you do?",
+        "imageUrl": "/images/options/1.gif",
+        "options": [
+            { "text": "Dash after it!", "trait": "P" },
+            { "text": "Chill and watch.", "trait": "C" },
+            { "text": "Check if it’s safe.", "trait": "W" },
+            { "text": "Try to play!", "trait": "M" }
+        ]
+    },
+    {
+        "chapter": 1,
+        "title": "2 A Friend in Need",
+        "subtitle": "You see your friend sitting alone under a tree... What do you do?",
+        "imageUrl": "/images/options/2.gif",
+        "options": [
+            { "text": "Big ol’ hug!", "trait": "A" },
+            { "text": "Goofy dance!", "trait": "M" },
+            { "text": "Sit and vibe.", "trait": "D" },
+            { "text": "Show ‘em the butterfly!", "trait": "I" }
+        ]
+    },
+    {
+        "chapter": 2,
+        "title": "3 The Glinting Mystery",
+        "subtitle": "Something shiny is stuck in the tree roots... What’s your move?",
+        "imageUrl": "/images/options/3.gif",
+        "options": [
+            { "text": "Dig it up!", "trait": "P" },
+            { "text": "Look for clues.", "trait": "I" },
+            { "text": "Call the squad!", "trait": "S" },
+            { "text": "Just grab it!", "trait": "B" }
+        ]
+    },
+    {
+        "chapter": 3,
+        "title": "4 The Key and the Paw Prints",
+        "subtitle": "It’s a key! And paw prints nearby… What now?",
+        "imageUrl": "/images/options/11.webp",
+        "options": [
+            { "text": "Track ‘em down!", "trait": "I" },
+            { "text": "Follow for fun!", "trait": "P" },
+            { "text": "Squad up first!", "trait": "S" },
+            { "text": "Lead the way!", "trait": "H" }
+        ]
+    },
+    {
+        "chapter": 4,
+        "title": "5 The Vined Gate",
+        "subtitle": "The paw prints lead to an old gate covered in vines… What do you do?",
+        "imageUrl": "/images/options/4.gif",
+        "options": [
+            { "text": "Check around first.", "trait": "W" },
+            { "text": "Clear the vines!", "trait": "H" },
+            { "text": "Figure out the lock.", "trait": "I" },
+            { "text": "Jingle it around!", "trait": "P" }
+        ]
+    },
+    {
+        "chapter": 5,
+        "title": "6 The Hidden Garden",
+        "subtitle": "The gate creaks open to a secret garden! But… rustling sounds?",
+        "imageUrl": "/images/options/6.gif",
+        "options": [
+            { "text": "Stand guard!", "trait": "D" },
+            { "text": "Make it a game!", "trait": "M" },
+            { "text": "Clear the path!", "trait": "H" },
+            { "text": "Stick together!", "trait": "S" }
+        ]
+    },
+    {
+        "chapter": 6,
+        "title": "7 The Fountain’s Secret",
+        "subtitle": "Something’s shining at the bottom of an old fountain… What’s the plan?",
+        "imageUrl": "/images/options/7.gif",
+        "options": [
+            { "text": "Jump in!", "trait": "B" },
+            { "text": "Get it safely.", "trait": "H" },
+            { "text": "Teamwork time!", "trait": "D" },
+            { "text": "Keep spirits up!", "trait": "A" }
+        ]
+    },
+    {
+        "chapter": 7,
+        "title": "8 The Coming Storm",
+        "subtitle": "Thunder rumbles as you grab a mysterious map… What now?",
+        "imageUrl": "/images/options/8.gif",
+        "options": [
+            { "text": "Stand tall!", "trait": "B" },
+            { "text": "Find shelter.", "trait": "W" },
+            { "text": "Calm the crew.", "trait": "A" },
+            { "text": "Eh, it’s just rain.", "trait": "C" }
+        ]
+    },
+    {
+        "chapter": 8,
+        "title": "9 The Cozy Cave",
+        "subtitle": "The map leads to a cave to wait out the storm… How do you chill?",
+        "imageUrl": "/images/options/9.gif",
+        "options": [
+            { "text": "Guard duty.", "trait": "W" },
+            { "text": "Story time!", "trait": "A" },
+            { "text": "Just relax.", "trait": "C" },
+            { "text": "Make it fun!", "trait": "M" }
+        ]
+    },
+    {
+        "chapter": 9,
+        "title": "10 The Rainbow Path Home",
+        "subtitle": "The sun’s back, showing a rainbow path home… How do you feel?",
+        "imageUrl": "/images/options/10.gif",
+        "options": [
+            { "text": "Let’s explore more!", "trait": "B" },
+            { "text": "Glad we stuck together!", "trait": "D" },
+            { "text": "Can’t wait to tell!", "trait": "S" },
+            { "text": "Proud of us!", "trait": "H" }
+        ]
+    }
+]

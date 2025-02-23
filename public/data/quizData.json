@@ -1,138 +1,283 @@
 [
     {
-        "chapter": 0,
-        "title": "1 MAGIC DOOR",
-        "subtitle": "You find a glowing door in a tree! Peeking through the keyhole, what excites you the most?",
-        "options": [
-            { "text": "A LIVELY PARTY WITH GAMES AND SNACKS!", "imageUrl": "/images/options/1.webp" },
-            { "text": "A PEACEFUL GARDEN FULL OF MAGICAL CREATURES TO WATCH OVER", "imageUrl": "/images/options/2.webp" },
-            { "text": "A TRAINING GROUND WHERE HEROES LEARN NEW SKILLS!", "imageUrl": "/images/options/3.webp" },
-            { "text": "GIANT TRAMPOLINE PARK WHERE YOU CAN JUMP", "imageUrl": "/images/options/4.webp" }
-        ]
-    },
-    {
         "chapter": 1,
-        "title": "2 Magical Buddy",
-        "subtitle": "You step through the door and meet a wizard who offers you a companion. Which one do you pick?",
+        "title": "1 Golden Visitor",
+        "subtitle": "One morning, a golden butterfly lands on your windowsill... What do you do?",
+        "imageUrl": "/images/options/1.gif",
         "options": [
-            { "text": "A watchful phoenix soaring high above", "imageUrl": "/images/options/5.webp" },
-            { "text": "A wise unicorn who loves solving puzzles", "imageUrl": "/images/options/6.webp" },
-            { "text": "A gentle fairy who gives the best hugs", "imageUrl": "/images/options/7.webp" },
-            { "text": "A playful dragon who knows all the fun tricks!", "imageUrl": "/images/options/8.webp" }
+            { 
+                "text": "Dash after it!", 
+                "trait": "P",
+                "response": "You bolt outside, but whoa—this little guy is fast! Your friend laughs, 'Chill! It’s not a race!'"
+            },
+            { 
+                "text": "Chill and watch.", 
+                "trait": "C",
+                "response": "You lean on the windowsill, just watching. Your friend whispers, 'It’s like a tiny golden dream…'"
+            },
+            { 
+                "text": "Check if it’s safe.", 
+                "trait": "W",
+                "response": "You stay put, making sure it’s okay first. Your friend nods, 'Smart move, we don’t wanna scare it!'"
+            },
+            { 
+                "text": "Try to play!", 
+                "trait": "M",
+                "response": "You reach out, wiggling your fingers like butterfly antennae. Your friend giggles, 'Think it wants to play tag?'"
+            }
         ]
     },
     {
         "chapter": 2,
-        "title": "3 Missing Bridge",
-        "subtitle": "Your path leads to a broken rainbow bridge. How will you make it across?",
+        "title": "2 A Friend in Need",
+        "subtitle": "You see your friend sitting alone under a tree... What do you do?",
+        "imageUrl": "/images/options/2.gif",
         "options": [
-            { "text": "Observe carefully and find the safest way", "imageUrl": "/images/options/9.webp" },
-            { "text": "Take your time and plan every step", "imageUrl": "/images/options/10.webp" },
-            { "text": "Work together to build a new bridge", "imageUrl": "/images/options/11.webp" },
-            { "text": "Find a clever and fun way to bounce across!", "imageUrl": "/images/options/12.webp" }
+            { 
+                "text": "Big ol’ hug!", 
+                "trait": "A",
+                "response": "You tackle-hug them! They laugh, 'Okay, okay, I feel better already!'"
+            },
+            { 
+                "text": "Goofy dance!", 
+                "trait": "M",
+                "response": "You bust out your silliest moves. Your friend snorts, 'Okay, that was ridiculous… but kinda amazing.'"
+            },
+            { 
+                "text": "Sit and vibe.", 
+                "trait": "D",
+                "response": "You sit beside them without a word. After a moment, they smile. 'Thanks for just being here.'"
+            },
+            { 
+                "text": "Show ‘em the butterfly!", 
+                "trait": "I",
+                "response": "You point to the butterfly. 'See that? Magic’s real.' Your friend sighs. 'Maybe you’re right…'"
+            }
         ]
     },
     {
         "chapter": 3,
-        "title": "4 Lost Forest Friends",
-        "subtitle": "As you cross, lost forest creatures appear, looking to you for help. What do you do?",
+        "title": "3 The Glinting Mystery",
+        "subtitle": "Something shiny is stuck in the tree roots... What’s your move?",
+        "imageUrl": "/images/options/3.gif",
         "options": [
-            { "text": "Guide them patiently and calmly", "imageUrl": "/images/options/13.webp" },
-            { "text": "Make it into a fun game while helping!", "imageUrl": "/images/options/14.webp" },
-            { "text": "Keep watch and protect them from danger", "imageUrl": "/images/options/15.webp" },
-            { "text": "Use your smarts to find the quickest route", "imageUrl": "/images/options/16.webp" }
+            { 
+                "text": "Dig it up!", 
+                "trait": "P",
+                "response": "You dig furiously! Your friend cheers, 'Go, go, go! You got this!'"
+            },
+            { 
+                "text": "Look for clues.", 
+                "trait": "I",
+                "response": "You examine the area carefully. Your friend nods, 'Sherlock vibes. I respect it.'"
+            },
+            { 
+                "text": "Call the squad!", 
+                "trait": "S",
+                "response": "You yell, 'Guys, check this out!' Your friend grins, 'Ooo, mystery time!'"
+            },
+            { 
+                "text": "Just grab it!", 
+                "trait": "B",
+                "response": "You yank it out! Your friend gasps, 'Whoa, no hesitation. Respect.'"
+            }
         ]
     },
     {
         "chapter": 4,
-        "title": "5 Enchanted Party",
-        "subtitle": "After helping, you're invited to a magical forest party! What do you do?",
+        "title": "4 The Key and the Paw Prints",
+        "subtitle": "It’s a key! And paw prints nearby… What now?",
+        "imageUrl": "/images/options/4.gif",
         "options": [
-            { "text": "Make sure everyone feels welcome and happy", "imageUrl": "/images/options/17.webp" },
-            { "text": "Find a quiet spot to enjoy from a distance", "imageUrl": "/images/options/18.webp" },
-            { "text": "Show off your cool tricks!", "imageUrl": "/images/options/19.webp" },
-            { "text": "Help set everything up just right", "imageUrl": "/images/options/20.webp" }
+            { 
+                "text": "Track ‘em down!", 
+                "trait": "I",
+                "response": "You study the prints. 'Hmmm…' Your friend whispers, 'Detective mode activated!'"
+            },
+            { 
+                "text": "Follow for fun!", 
+                "trait": "P",
+                "response": "You bounce ahead, following the prints. Your friend laughs, 'Wait up, speedy!'"
+            },
+            { 
+                "text": "Squad up first!", 
+                "trait": "S",
+                "response": "You gather the crew. 'We roll as a team!' Your friend fist-bumps you, 'Squad goals!'"
+            },
+            { 
+                "text": "Lead the way!", 
+                "trait": "H",
+                "response": "You march ahead. Your friend salutes, 'Fearless leader reporting for duty!'"
+            }
         ]
     },
     {
         "chapter": 5,
-        "title": "6 Sudden Storm!",
-        "subtitle": "Mid-party, a storm rolls in! Everyone looks to you for guidance. What do you do?",
+        "title": "5 The Vined Gate",
+        "subtitle": "The paw prints lead to an old gate covered in vines… What do you do?",
+        "imageUrl": "/images/options/5.gif",
         "options": [
-            { "text": "Stay calm and guide everyone to safety", "imageUrl": "/images/options/21.webp" },
-            { "text": "Keep watch and protect everyone", "imageUrl": "/images/options/22.webp" },
-            { "text": "Turn it into an adventure and keep spirits high!", "imageUrl": "/images/options/23.webp" },
-            { "text": "Find the quickest and safest route", "imageUrl": "/images/options/24.webp" }
+            { 
+                "text": "Check around first.", 
+                "trait": "W",
+                "response": "You scan the area. Your friend whispers, 'Good idea, what if it’s a magic trap?!'"
+            },
+            { 
+                "text": "Clear the vines!", 
+                "trait": "H",
+                "response": "You start yanking vines. Your friend helps, 'Jungle cleanup crew, let’s go!'"
+            },
+            { 
+                "text": "Figure out the lock.", 
+                "trait": "I",
+                "response": "You study the lock. Your friend mutters, 'Bet it needs, like, secret words or something…'"
+            },
+            { 
+                "text": "Jingle it around!", 
+                "trait": "P",
+                "response": "You shake the key. Your friend giggles, 'Nice. Maybe it’s a dance-powered door?'"
+            }
         ]
     },
+    
     {
         "chapter": 6,
-        "title": "7 Cloud Obstacle",
-        "subtitle": "As the storm clears, a floating path appears. How do you cross it?",
+        "title": "6 The Hidden Garden",
+        "subtitle": "The gate creaks open to a secret garden! But… rustling sounds?",
+        "imageUrl": "/images/options/6.gif",
         "options": [
-            { "text": "Leap across with confidence", "imageUrl": "/images/options/25.webp" },
-            { "text": "Observe and find the safest route", "imageUrl": "/images/options/26.webp" },
-            { "text": "Step carefully, trusting your instincts", "imageUrl": "/images/options/27.webp" },
-            { "text": "Dance your way across for fun!", "imageUrl": "/images/options/28.webp" }
+            { 
+                "text": "Stand guard!", 
+                "trait": "D",
+                "response": "You hold up a stick like a sword. Your friend whispers, 'Protect the garden at all costs!'"
+            },
+            { 
+                "text": "Make it a game!", 
+                "trait": "M",
+                "response": "You crouch and whisper, 'We’re in a stealth mission!' Your friend grins, 'Operation: Fun Mode activated!'"
+            },
+            { 
+                "text": "Clear the path!", 
+                "trait": "H",
+                "response": "You push aside branches. Your friend helps, 'No obstacle shall stop us!'"
+            },
+            { 
+                "text": "Stick together!", 
+                "trait": "S",
+                "response": "You motion to stay close. Your friend nods, 'Yeah, I’m not getting lost in some magic garden!'"
+            }
         ]
     },
     {
         "chapter": 7,
-        "title": "8 Puzzle Challenge!",
-        "subtitle": "At the end of the path, a glowing puzzle blocks your way. How do you solve it?",
+        "title": "7 The Fountain’s Secret",
+        "subtitle": "Something’s shining at the bottom of an old fountain… What’s the plan?",
+        "imageUrl": "/images/options/7.gif",
         "options": [
-            { "text": "Use logic and intelligence to figure it out", "imageUrl": "/images/options/29.webp" },
-            { "text": "Defend the puzzle while others work on it", "imageUrl": "/images/options/30.webp" },
-            { "text": "Try every fun and silly solution you can think of!", "imageUrl": "/images/options/31.webp" },
-            { "text": "Work together and combine ideas with friends", "imageUrl": "/images/options/32.webp" },
-            { "text": "Stay calm and think it through carefully", "imageUrl": "/images/options/33.webp" }
+            { 
+                "text": "Jump in!", 
+                "trait": "B",
+                "response": "You splash in without a thought! Your friend gasps, 'No hesitation! Absolute legend!'"
+            },
+            { 
+                "text": "Get it safely.", 
+                "trait": "H",
+                "response": "You roll up your sleeves. Your friend nods, 'Okay, smart move. No swamp monster grabby hands today!'"
+            },
+            { 
+                "text": "Teamwork time!", 
+                "trait": "D",
+                "response": "You and your friend link arms. 'Together!' Your friend grins, 'Ultimate duo power!'"
+            },
+            { 
+                "text": "Keep spirits up!", 
+                "trait": "A",
+                "response": "You cheer, 'We got this!' Your friend smiles, 'Okay, okay, let’s do it!'"
+            }
         ]
     },
     {
         "chapter": 8,
-        "title": "9 Hidden Treasure",
-        "subtitle": "Solving the puzzle reveals a locked treasure chest! How do you open it?",
+        "title": "8 The Coming Storm",
+        "subtitle": "Thunder rumbles as you grab a mysterious map… What now?",
+        "imageUrl": "/images/options/8.gif",
         "options": [
-            { "text": "Study the lock and figure out how to unlock it", "imageUrl": "/images/options/34.webp" },
-            { "text": "Use your strength to break it open!", "imageUrl": "/images/options/35.webp" },
-            { "text": "Try a fun spell and see what happens!", "imageUrl": "/images/options/36.webp" },
-            { "text": "Stand guard while someone else solves it", "imageUrl": "/images/options/37.webp" },
-            { "text": "Work together with friends to solve it!", "imageUrl": "/images/options/32.webp" }
+            { 
+                "text": "Stand tall!", 
+                "trait": "B",
+                "response": "You puff out your chest, 'A little thunder never scared me!' Your friend smirks, 'Okay, hero mode.'"
+            },
+            { 
+                "text": "Find shelter.", 
+                "trait": "W",
+                "response": "You look for cover. Your friend sighs, 'Yeah, I’d rather not be a human lightning rod…'"
+            },
+            { 
+                "text": "Calm the crew.", 
+                "trait": "A",
+                "response": "You pat your friend’s shoulder, 'We got this.' They take a deep breath. 'Okay… yeah, you’re right.'"
+            },
+            { 
+                "text": "Eh, it’s just rain.", 
+                "trait": "C",
+                "response": "You shrug, 'It’s just a free shower!' Your friend snorts, 'Alright, rain enthusiast.'"
+            }
         ]
     },
     {
         "chapter": 9,
-        "title": "10 Lost Puppy",
-        "subtitle": "Inside the chest, you don’t find gold—but a small, lost puppy! What do you do?",
+        "title": "9 The Cozy Cave",
+        "subtitle": "The map leads to a cave to wait out the storm… How do you chill?",
+        "imageUrl": "/images/options/9.gif",
         "options": [
-            { "text": "Gently guide them home with patience", "imageUrl": "/images/options/38.webp" },
-            { "text": "Protect them from any dangers along the way", "imageUrl": "/images/options/39.webp" },
-            { "text": "Lead them on a fun adventure home!", "imageUrl": "/images/options/40.webp" },
-            { "text": "Comfort them with cuddles and kindnesst", "imageUrl": "/images/options/41.webp" },
-            { "text": "Use your smarts to find the fastest way home", "imageUrl": "/images/options/42.webp" }
+            { 
+                "text": "Guard duty.", 
+                "trait": "W",
+                "response": "You stand at the entrance like a knight. Your friend laughs, 'Brave warrior of… cozy caves?'"
+            },
+            { 
+                "text": "Story time!", 
+                "trait": "A",
+                "response": "You start telling an epic tale. Your friend leans in, 'Ooo, keep going!'"
+            },
+            { 
+                "text": "Just relax.", 
+                "trait": "C",
+                "response": "You stretch out on the ground. Your friend flops beside you, 'This is actually kinda nice.'"
+            },
+            { 
+                "text": "Make it fun!", 
+                "trait": "M",
+                "response": "You pick up rocks and start stacking them. Your friend joins in, 'Cave rock art competition, let’s go!'"
+            }
         ]
     },
     {
         "chapter": 10,
-        "title": "11 Magical Snowstorm",
-        "subtitle": "After your decision, a sudden snowfall transforms the forest! How do you handle it?",
+        "title": "10 The Rainbow Path Home",
+        "subtitle": "The sun’s back, showing a rainbow path home… How do you feel?",
+        "imageUrl": "/images/options/10.gif",
         "options": [
-            { "text": "Keep everyone warm and safe", "imageUrl": "/images/options/43.webp" },
-            { "text": "Find the safest path through the snow", "imageUrl": "/images/options/44.webp" },
-            { "text": "Start a snowball fight and make it fun!", "imageUrl": "/images/options/45.webp" },
-            { "text": "Push forward and lead the way!", "imageUrl": "/images/options/46.webp" },
-            { "text": " Stay close and ensure no one gets lost", "imageUrl": "/images/options/47.webp" }
-        ]
-    },
-    {
-        "chapter": 11,
-        "title": "12 Magic Gift!",
-        "subtitle": "At journey’s end, the wizard reappears with a special reward! Which do you choose?",
-        "options": [
-            { "text": "A magical watch that helps protect friends", "imageUrl": "/images/options/48.webp" },
-            { "text": "A charm that brings peace and calm to everyone", "imageUrl": "/images/options/49.webp" },
-            { "text": "A hero’s cape that grants bravery and strength", "imageUrl": "/images/options/50.webp" },
-            { "text": "A playful wand that creates fun and surprises", "imageUrl": "/images/options/51.webp" }
+            { 
+                "text": "Let’s explore more!", 
+                "trait": "B",
+                "response": "You bounce ahead. Your friend grins, 'Guess we’re never going home, huh?'"
+            },
+            { 
+                "text": "Glad we stuck together!", 
+                "trait": "D",
+                "response": "You smile at your friend. 'Wouldn’t have done this without you.' They nod, 'Same, this was awesome.'"
+            },
+            { 
+                "text": "Can’t wait to tell!", 
+                "trait": "S",
+                "response": "You wave the map, 'Dude, we have THE best story!' Your friend laughs, 'They won’t believe us!'"
+            },
+            { 
+                "text": "Proud of us!", 
+                "trait": "H",
+                "response": "You take a deep breath, 'We actually did it.' Your friend grins, 'Heck yeah, we did!'"
+            }
         ]
     }
 ]

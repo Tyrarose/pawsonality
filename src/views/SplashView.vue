@@ -16,6 +16,9 @@
       <div class="progress-bar-container mt-5 mx-auto">
         <div class="progress-bar" :style="{ width: progress + '%' }"></div>
       </div>
+      
+      <!-- Show loading message while GIFs are preloading -->
+      <p v-if="!allGifsLoaded" class="text-white mt-3 text-lg">Loading animations...</p>
     </div>
   </section>
 </template>
@@ -25,13 +28,40 @@ export default {
   name: 'SplashView',
   data() {
     return {
-      progress: 0
+      progress: 0,
+      allGifsLoaded: false,
+      gifUrls: [
+        "/images/options/1.gif",
+        "/images/options/2.gif",
+        "/images/options/3.gif",
+        "/images/options/4.gif",
+        "/images/options/5.gif",
+        "/images/options/6.gif",
+        "/images/options/7.gif",
+        "/images/options/8.gif",
+        "/images/options/9.gif",
+        "/images/options/10.gif"
+      ],
     };
   },
   mounted() {
+    this.preloadGifs();
     this.startLoading();
   },
   methods: {
+    preloadGifs() {
+      let loadedCount = 0;
+      this.gifUrls.forEach((gif) => {
+        const img = new Image();
+        img.src = gif;
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === this.gifUrls.length) {
+            this.allGifsLoaded = true;
+          }
+        };
+      });
+    },
     startLoading() {
       const steps = [8, 85, 90, 100];
       let index = 0;
@@ -42,9 +72,11 @@ export default {
           index++;
         } else {
           clearInterval(interval);
-          this.$emit('loadingComplete'); // Emits event when loading is complete
+          if (this.allGifsLoaded) {
+            this.$emit('loadingComplete'); // Emit event only when GIFs are loaded
+          }
         }
-      }, 800); // Adjust timing for smooth effect
+      }, 800);
     }
   }
 };
@@ -66,15 +98,15 @@ export default {
   width: 50%;
   height: 12px;
   border-radius: 10px;
-  border: 2px solid white; /* White border when empty */
-  background-color: transparent; /* Transparent background */
+  border: 2px solid white;
+  background-color: transparent;
   overflow: hidden;
   position: relative;
 }
 
 .progress-bar {
   height: 100%;
-  background-color: white; /* White fill */
+  background-color: white;
   width: 0;
   transition: width 0.8s ease-in-out;
   border-radius: 10px;
