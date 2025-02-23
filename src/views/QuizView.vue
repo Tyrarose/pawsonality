@@ -2,6 +2,7 @@
     <div class="container">
         <!-- Top Progress Bar -->
         <PawgressBar :chapter="chapter" class="progress-bar"/>
+        
         <transition name="dissolve" mode="out-in">
             <div v-if="currentChapter" :key="chapter" class="content-wrapper">
                 <div class="chapter-content">
@@ -27,7 +28,8 @@
                             v-for="(option, index) in currentChapter.options"
                             :key="index"
                             :text="option.text"
-                            :class="{ 'selected-card': option === selectedOption }"
+                            :response="option.response"
+                            :flipped="option === selectedOption"
                             @click="selectOption(option)"
                         />
                     </div>
@@ -49,10 +51,11 @@ export default {
     },
     data() {
         return {
-            chapter: 0,
+            chapter: 1,
             isTransitioning: false, 
             quiz: [],
-            selectedOption: null // Store the clicked option
+            selectedOption: null,
+            selectedTraits: [] // Store selected traits
         };
     },
     computed: {
@@ -63,20 +66,19 @@ export default {
     methods: {
         selectOption(option) {
             if (this.isTransitioning) return;
-            
-            this.selectedOption = option; // Store clicked option
+
+            this.selectedOption = option;
+            this.selectedTraits.push(option.trait); // Store the trait
             this.isTransitioning = true;
 
+            // Delay transition to next chapter to allow animation to play
             setTimeout(() => {
-                if (this.chapter < this.quiz.length - 1) {
-                    this.chapter++; // Move to next question
+                if (this.chapter < this.quiz.length) {
+                    this.chapter++;
+                    this.selectedOption = null;
                 }
-            }, 400); // Delay transition to show selection
-            
-            setTimeout(() => {
-                this.selectedOption = null;
                 this.isTransitioning = false;
-            }, 400); // Allow a smooth transition
+            }, 3000); // Delay to allow response to be read
         },
         async loadQuizData() {
             try {
@@ -143,11 +145,10 @@ export default {
     }
 }
 
-/* Highlight the selected card before transition */
-.selected-card {
-    transform: scale(1.1);
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
+/* Flipped & Enlarged Card */
+.flipped-card {
+    transform: scale(1.2) rotateY(180deg);
+    transition: transform 0.6s ease-in-out;
 }
 
 /* Faster Dissolve */

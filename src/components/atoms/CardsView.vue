@@ -1,13 +1,19 @@
 <template>
-    <div 
-        class="card-container cursor-pointer transform transition-transform"
-        :class="{ 'clicked': isClicked }"
-        @click="handleClick"
-    >
-        <div class="bg-brand-cards rounded-lg p-4 flex items-center justify-center">
-            <p class="font-lovelo text-brand-brown text-center text-md lg:text-lg leading-tight">
-                {{ text }}
-            </p>
+    <div class="card-wrapper" @click="handleClick">
+        <div class="card" :class="{ flipped: flipped }">
+            <!-- Card Front -->
+            <div class="card-face card-front">
+                <p class="font-lovelo text-brand-brown text-center text-md lg:text-lg leading-tight">
+                    {{ text }}
+                </p>
+            </div>
+
+            <!-- Card Back -->
+            <div class="card-face card-back">
+                <p class="font-lovelo text-white text-center text-md lg:text-lg leading-tight">
+                    {{ response }}
+                </p>
+            </div>
         </div>
     </div>
 </template>
@@ -16,56 +22,64 @@
 export default {
     name: 'CardsView',
     props: {
-        text: {
-            type: String,
-            required: true
-        }
-    },
-    data() {
-        return {
-            isClicked: false
-        };
+        text: String,
+        response: String,
+        flipped: Boolean
     },
     methods: {
         handleClick() {
-            const clickSound = new Audio('/sounds/mouse-click.mp3');
-            clickSound.play();
-            
-            this.isClicked = true;
-            setTimeout(() => {
-                this.isClicked = false;
-            }, 150);
-
-            this.$emit('click');
+            if (!this.flipped) {
+                this.$emit('click');
+            }
         }
     }
-}
+};
 </script>
 
 <style scoped>
-.card-container {
-    height: 100%;
-    transition: all 0.15s ease-in-out;
+/* Wrapper to prevent perspective issues */
+.card-wrapper {
+    perspective: 1000px; /* Adds 3D depth */
+    cursor: pointer;
 }
 
-/* Increase card size */
-.card-container > div {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 100px;
+/* Card Container */
+.card {
+    width: 100%;
+    min-height: 140px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Flip the card when 'flipped' class is applied */
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    backface-visibility: hidden; /* Hides the back while front is shown */
+    padding: 1rem;
 }
 
-/* Larger card height on desktop */
-@media (min-width: 1024px) {
-    .card-container > div {
-        min-height: 140px;
-    }
+/* Styling for Front */
+.card-front {
+    background-color: #f3e9dc;
+    color: #5a3e2b;
 }
 
-.clicked {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-    transform: translate(4px, 4px);
+/* Styling for Back */
+.card-back {
+    background-color: #5a3e2b;
+    color: #f3e9dc;
+    transform: rotateY(180deg);
 }
 </style>
