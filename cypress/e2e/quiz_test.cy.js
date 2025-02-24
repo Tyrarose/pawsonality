@@ -9,16 +9,13 @@ describe('Dog Breed Quiz E2E Test', () => {
         cy.url({ timeout: 5000 }).should('include', '/welcome');
 
         // Wait until the start button appears and click it
-        cy.contains('Let’s go on an adventure!', { timeout: 5000 }).should('be.visible').click({ force: true });
+        cy.contains('Let’s go on an adventure!', { timeout: 8000 }).should('be.visible').click({ force: true });
 
         // Ensure quiz page loads
         cy.url().should('include', '/quiz');
 
-        // Wait for quiz data to load
-        cy.wait(2000);
-
         // Answer 13 questions with an 8-second delay in between
-        for (let i = 0; i < 14; i++) {  
+        for (let i = 0; i < 13; i++) {  
             // Wait for the cards to load
             cy.get('.options-grid .card-wrapper', { timeout: 5000 })
                 .should('be.visible')
@@ -34,7 +31,10 @@ describe('Dog Breed Quiz E2E Test', () => {
         }
 
         // Ensure we navigate to results
-        cy.url().should('include', '/results');
+        cy.url({ timeout: 10000 }).should('include', '/results');
+
+        // Wait for the progress bar to appear (ensuring results page is loaded)
+        cy.get('.progress-bar-container', { timeout: 5000 }).should('be.visible');
 
         // Check if the result page shows the dog breed
         cy.get('h1', { timeout: 5000 }).should('contain', 'You are a');

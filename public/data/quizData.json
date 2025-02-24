@@ -323,7 +323,7 @@
         "chapter": 11,
         "title": "11 The Chest of Echoes",
         "subtitle": "Your digging pays off as you uncover an ancient chest, but suddenly it starts speaking?!",
-        "imageUrl": "/images/options/11.webp",
+        "imageUrl": "/images/options/9.webp",
         "options": [
             { 
                 "text": "Open it fast!", 
@@ -355,7 +355,7 @@
         "chapter": 12,
         "title": "12 The Final Choice",
         "subtitle": "The chest opens on its own, revealing a glowing stone that speaks to you: 'What do you seek?'",
-        "imageUrl": "/images/options/12.gif",
+        "imageUrl": "/images/options/8.gif",
         "options": [
             { 
                 "text": "Adventure!", 
@@ -387,7 +387,7 @@
         "chapter": 13,
         "title": "13 The Journey Continues…",
         "subtitle": "After receiving your magical reward, you look at each other, ready to head home... or are you?",
-        "imageUrl": "/images/options/13.gif",
+        "imageUrl": "/images/options/7.gif",
         "options": [
             { 
                 "text": "Head home, satisfied.", 
