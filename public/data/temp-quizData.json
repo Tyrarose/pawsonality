@@ -1,134 +1,66 @@
 [
     {
-        "chapter": 0,
-        "title": "title 1",
-        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.",
-        "options": [
-            { "text": "option A", "imageUrl": "/images/options/1.webp" },
-            { "text": "option B", "imageUrl": "/images/options/2.webp" },
-            { "text": "option C", "imageUrl": "/images/options/3.webp" },
-            { "text": "option D", "imageUrl": "/images/options/4.webp" }
-        ]
-    },
-    {
         "chapter": 1,
-        "title": "title 2",
-        "subtitle": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+        "title": "Title 1",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.",
+        "imageUrl": "/images/options/1.gif",
         "options": [
-            { "text": "option A", "imageUrl": "/images/options/5.webp" },
-            { "text": "option B", "imageUrl": "/images/options/6.webp" },
-            { "text": "option C", "imageUrl": "/images/options/7.webp" },
-            { "text": "option D", "imageUrl": "/images/options/8.webp" }
+            { 
+                "text": "option A", 
+                "trait": "P",
+                "next": "option A",
+                "friend": "option A"
+            },
+            { 
+                "text": "option B", 
+                "trait": "C",
+                "next": "option B",
+                "friend": "option B"
+            },
+            { 
+                "text": "option C", 
+                "trait": "W",
+                "next": "option C",
+                "friend": "option C"
+            },
+            { 
+                "text": "option D", 
+                "trait": "M",
+                "next": "option D?",
+                "friend": "option D"
+            }
         ]
     },
     {
         "chapter": 2,
-        "title": "title 3",
-        "subtitle": "Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
+        "title": "Title 2",
+        "subtitle": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+        "imageUrl": "/images/options/2.gif",
         "options": [
-            { "text": "option A", "imageUrl": "/images/options/9.webp" },
-            { "text": "option B", "imageUrl": "/images/options/10.webp" },
-            { "text": "option C", "imageUrl": "/images/options/11.webp" },
-            { "text": "option D", "imageUrl": "/images/options/12.webp" }
-        ]
-    },
-    {
-        "chapter": 3,
-        "title": "title 4",
-        "subtitle": "Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.",
-        "options": [
-            { "text": "option A", "imageUrl": "/images/options/13.webp" },
-            { "text": "option B", "imageUrl": "/images/options/14.webp" },
-            { "text": "option C", "imageUrl": "/images/options/15.webp" },
-            { "text": "option D", "imageUrl": "/images/options/16.webp" }
-        ]
-    },
-    {
-        "chapter": 4,
-        "title": "title 5",
-        "subtitle": "Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus.",
-        "options": [
-            { "text": "option A", "imageUrl": "/images/options/17.webp" },
-            { "text": "option B", "imageUrl": "/images/options/18.webp" },
-            { "text": "option C", "imageUrl": "/images/options/19.webp" },
-            { "text": "option D", "imageUrl": "/images/options/20.webp" }
-        ]
-    },
-    {
-        "chapter": 5,
-        "title": "title 6",
-        "subtitle": "Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.",
-        "options": [
-            { "text": "option A", "imageUrl": "/images/options/21.webp" },
-            { "text": "option B", "imageUrl": "/images/options/22.webp" },
-            { "text": "option C", "imageUrl": "/images/options/23.webp" },
-            { "text": "option D", "imageUrl": "/images/options/24.webp" }
-        ]
-    },
-    {
-        "chapter": 6,
-        "title": "title 7",
-        "subtitle": "Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu.",
-        "options": [
-            { "text": "option A", "imageUrl": "/images/options/25.webp" },
-            { "text": "option B", "imageUrl": "/images/options/26.webp" },
-            { "text": "option C", "imageUrl": "/images/options/27.webp" },
-            { "text": "option D", "imageUrl": "/images/options/28.webp" }
-        ]
-    },
-    {
-        "chapter": 7,
-        "title": "title 8",
-        "subtitle": "Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus.",
-        "options": [
-            { "text": "option A", "imageUrl": "/images/options/29.webp" },
-            { "text": "option B", "imageUrl": "/images/options/30.webp" },
-            { "text": "option C", "imageUrl": "/images/options/31.webp" },
-            { "text": "option D", "imageUrl": "/images/options/32.webp" }
-        ]
-    },
-    {
-        "chapter": 8,
-        "title": "title 9",
-        "subtitle": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.",
-        "options": [
-            { "text": "option A", "imageUrl": "/images/options/33.webp" },
-            { "text": "option B", "imageUrl": "/images/options/34.webp" },
-            { "text": "option C", "imageUrl": "/images/options/35.webp" },
-            { "text": "option D", "imageUrl": "/images/options/36.webp" }
-        ]
-    },
-    {
-        "chapter": 9,
-        "title": "title 10",
-        "subtitle": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-        "options": [
-            { "text": "option A", "imageUrl": "/images/options/37.webp" },
-            { "text": "option B", "imageUrl": "/images/options/38.webp" },
-            { "text": "option C", "imageUrl": "/images/options/39.webp" },
-            { "text": "option D", "imageUrl": "/images/options/40.webp" }
-        ]
-    },
-    {
-        "chapter": 10,
-        "title": "title 11",
-        "subtitle": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.",
-        "options": [
-            { "text": "option A", "imageUrl": "/images/options/41.webp" },
-            { "text": "option B", "imageUrl": "/images/options/42.webp" },
-            { "text": "option C", "imageUrl": "/images/options/43.webp" },
-            { "text": "option D", "imageUrl": "/images/options/44.webp" }
-        ]
-    },
-    {
-        "chapter": 11,
-        "title": "title 12",
-        "subtitle": "Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.",
-        "options": [
-            { "text": "option A", "imageUrl": "/images/options/45.webp" },
-            { "text": "option B", "imageUrl": "/images/options/46.webp" },
-            { "text": "option C", "imageUrl": "/images/options/47.webp" },
-            { "text": "option D", "imageUrl": "/images/options/48.webp" }
+            { 
+                "text": "option A", 
+                "trait": "A",
+                "next": "option A",
+                "friend": "option A"
+            },
+            { 
+                "text": "option B", 
+                "trait": "M",
+                "next": "option B",
+                "friend": "option B"
+            },
+            { 
+                "text": "option C", 
+                "trait": "D",
+                "next": "option C",
+                "friend": "option C"
+            },
+            { 
+                "text": "option D", 
+                "trait": "I",
+                "next": "option D?",
+                "friend": "option D"
+            }
         ]
     }
 ]

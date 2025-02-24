@@ -1,107 +1,89 @@
-<script>
-import ButtonAtom from '@/components/atoms/ButtonAtom.vue'
-import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-
-export default {
-  name: 'WelcomeView',
-  components: {
-    ButtonAtom
-  },
-  setup() {
-    const router = useRouter()
-    const fullH1Text = 'Hey there!'
-    const fullH6Text1 = 'Ready to discover your inner pup?'
-    const fullH6Text2 = 'Each choice leads you closer to uncovering your magical canine spirit.'
-
-    const h1Text = ref('')
-    const h6Text1 = ref('')
-    const h6Text2 = ref('')
-    const showButton = ref(false)
-
-    const typeText = (target, text, speed, callback) => {
-      let i = 0
-      const interval = setInterval(() => {
-        target.value += text[i]
-        i++
-        if (i === text.length) {
-          clearInterval(interval)
-          if (callback) setTimeout(callback, 500)
-        }
-      }, speed)
-    }
-
-    onMounted(() => {
-      typeText(h1Text, fullH1Text, 0, () => {
-        typeText(h6Text1, fullH6Text1, 30, () => {
-          typeText(h6Text2, fullH6Text2, 30, () => {
-            showButton.value = true
-          })
-        })
-      })
-    })
-
-    const goToQuiz = () => {
-      router.push('/quiz')
-    }
-
-    return { h1Text, h6Text1, h6Text2, showButton, goToQuiz }
-  }
-}
-</script>
-
 <template>
-  <section class="bg-brand-red min-h-screen flex items-center justify-center">
-    <div class="container m-6 text-center space-y-12"> 
+  <section 
+    class="bg-brand-red min-h-screen flex items-center justify-center" 
+    style="background-image: url('/images/mesh.png'); background-repeat: repeat;"
+  >
+    <div class="container text-center">
       <img 
         src="/images/dog.png" 
         alt="dog logo" 
-        class="object-contain w-40 h-40 mx-auto tilting-dog"
+        class="object-contain w-80 h-80 mx-auto tilting-dog"
       />
-      <h1 class="font-gulfs kern-tight text-white text-4xl">{{ h1Text }}</h1>
-      <div class="space-y-6">
-        <h6 class="font-odri kern-normal leading-tight text-white text-4xl">{{ h6Text1 }}</h6>
-        <h6 class="font-odri kern-normal text-white text-4xl leading-[0.6]">{{ h6Text2 }}</h6>
+      <h6 class="font-odri text-white text-5xl mt-2">
+        Calculating your dog breed personality
+      </h6>
+
+      <!-- Custom Progress Bar -->
+      <div class="progress-bar-container mt-5 mx-auto">
+        <div class="progress-bar" :style="{ width: progress + '%' }"></div>
       </div>
-      <ButtonAtom 
-        v-if="showButton" 
-        class="mx-auto mt-12 slide-in-button"
-        buttonText="Let’s go on an adventure!" 
-        icon="fa fa-play" 
-        @click="goToQuiz" 
-      />
+
+      <h1 class="font-gulfs text-white text-5xl mt-5">You are a</h1>
+      <h1 class="font-gulfs text-white text-5xl mt-5">
+        {{ breed || "Mysterious Pup" }}
+      </h1>
     </div>
   </section>
 </template>
 
+<script>
+export default {
+  name: 'ResultView',
+  data() {
+    return {
+      progress: 0,
+      breed: ''
+    };
+  },
+  mounted() {
+    this.startLoading();
+    this.breed = this.$route.query.breed || 'Unknown Breed'; // Get breed from route params
+  },
+  methods: {
+    startLoading() {
+      const steps = [8, 85, 90, 100];
+      let index = 0;
+
+      const interval = setInterval(() => {
+        if (index < steps.length) {
+          this.progress = steps[index];
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 800);
+    }
+  }
+};
+</script>
+
 <style scoped>
+/* Tilting Dog Animation */
 @keyframes tilt {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(5deg);
-  }
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
 }
 
 .tilting-dog {
   animation: tilt 1.5s ease-in-out infinite alternate;
 }
 
-.slide-in-button {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slide-in 0.5s ease-out forwards;
+/* Progress Bar Styles */
+.progress-bar-container {
+  width: 50%;
+  height: 12px;
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
 }
 
-@keyframes slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.progress-bar {
+  height: 100%;
+  background-color: white;
+  width: 0;
+  transition: width 0.8s ease-in-out;
+  border-radius: 10px;
 }
 </style>

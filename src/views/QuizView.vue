@@ -25,15 +25,14 @@
 
                     <div class="options-grid">
                         <CardsView
-    v-for="(option, index) in currentChapter.options"
-    :key="index"
-    :text="option.text"
-    :friend="option.friend"
-    :flipped="option === selectedOption"
-    :readingTime="Math.max(2, option.friend.length / 10)"
-    @click="selectOption(option)"
-/>
-
+                            v-for="(option, index) in currentChapter.options"
+                            :key="index"
+                            :text="option.text"
+                            :friend="option.friend"
+                            :flipped="option === selectedOption"
+                            :readingTime="Math.max(2, option.friend.length / 10)"
+                            @click="selectOption(option)"
+                        />
                     </div>
                 </div>
             </div>
@@ -42,6 +41,7 @@
 </template>
 
 <script>
+import { useRouter } from 'vue-router';
 import CardsView from '@/components/atoms/CardsView.vue';
 import PawgressBar from '@/components/atoms/PawgressBar.vue';
 
@@ -57,8 +57,9 @@ export default {
             isTransitioning: false, 
             quiz: [],
             selectedOption: null,
-            selectedTraits: [], // Store selected traits
-            readingTimeout: 3000 // Default fallback reading time
+            traitScores: {}, // Track scores for each trait
+            dogBreeds: [], // Load dog breed data
+            readingTimeout: 3000
         };
     },
     computed: {
@@ -66,30 +67,35 @@ export default {
             return this.quiz.find(chapter => chapter.chapter === this.chapter) || null;
         }
     },
+    setup() {
+        const router = useRouter();
+        return { router };
+    },
     methods: {
         selectOption(option) {
-        if (this.isTransitioning) return;
+            if (this.isTransitioning) return;
 
-        this.selectedOption = option;
-        this.selectedTraits.push(option.trait);
-        this.isTransitioning = true;
+            this.selectedOption = option;
 
-        // Ensure readingTime is calculated before transition
-        const readingTime = Math.max(2, option.friend.length / 10) * 1000; // Convert to ms
+            // Increment the score for the selected trait
+            this.traitScores[option.trait] = (this.traitScores[option.trait] || 0) + 1;
 
-        console.log(`Reading time: ${readingTime / 1000} seconds`);
+            this.isTransitioning = true;
 
-        // Wait for the card to visually flip before starting the timeout
-        this.$nextTick(() => {
-            setTimeout(() => {
-                if (this.chapter < this.quiz.length) {
-                    this.chapter++;
-                    this.selectedOption = null;
-                }
-                this.isTransitioning = false;
-            }, readingTime);
-        });
-    },
+            const readingTime = Math.max(2, option.friend.length / 10) * 1000;
+
+            this.$nextTick(() => {
+                setTimeout(() => {
+                    if (this.chapter < this.quiz.length) {
+                        this.chapter++;
+                        this.selectedOption = null;
+                    } else {
+                        this.calculatePersonalityType();
+                    }
+                    this.isTransitioning = false;
+                }, readingTime);
+            });
+        },
         async loadQuizData() {
             try {
                 const response = await fetch('/data/quizData.json');
@@ -98,14 +104,56 @@ export default {
             } catch (error) {
                 console.error('Error loading quiz data:', error);
             }
+        },
+        async loadDogBreedData() {
+            try {
+                const response = await fetch('/data/dogbreedsData.json');
+                const data = await response.json();
+                this.dogBreeds = data.breeds;
+            } catch (error) {
+                console.error('Error loading dog breed data:', error);
+            }
+        },
+        calculatePersonalityType() {
+            // Get the top three highest scoring traits
+            const sortedTraits = Object.entries(this.traitScores)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 3)
+                .map(([trait]) => trait);
+
+            console.log('Top Traits:', sortedTraits);
+
+            // Find the best matching dog breed
+            const matchedBreed = this.findBestMatchingBreed(sortedTraits);
+
+            console.log('Best Matching Breed:', matchedBreed);
+
+            // Navigate to results page with breed name
+            this.router.push({ path: '/results', query: { breed: matchedBreed } });
+        },
+        findBestMatchingBreed(traits) {
+            let bestMatch = null;
+            let maxMatches = 0;
+
+            this.dogBreeds.forEach(breed => {
+                // Count how many traits match
+                const matches = breed.personality.filter(trait => traits.includes(trait)).length;
+
+                if (matches > maxMatches) {
+                    maxMatches = matches;
+                    bestMatch = breed.name;
+                }
+            });
+
+            return bestMatch || 'Unknown Breed';
         }
     },
-    created() {
-        this.loadQuizData();
+    async created() {
+        await this.loadQuizData();
+        await this.loadDogBreedData();
     }
 };
 </script>
-
 
 <style scoped>
 /* Main Container */

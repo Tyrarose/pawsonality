@@ -20,15 +20,29 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      quizCount: 0 // Holds the total number of quiz questions
+    };
+  },
   computed: {
     totalPaws() {
-      return 6; // Show all 6 paw slots
+      return Math.ceil(this.quizCount / 2); // Divide quiz count by 2 to determine paw slots
     },
     fullPaws() {
       return Math.floor(this.chapter / 2); // Every 2 chapters = 1 full paw
     },
     hasHalfPaw() {
       return this.chapter % 2 !== 0; // If odd, show a half paw
+    }
+  },
+  async mounted() {
+    try {
+      const response = await fetch('/data/quizData.json'); // Fetch from public folder
+      const quizData = await response.json();
+      this.quizCount = quizData.length; // Set quiz count from JSON
+    } catch (error) {
+      console.error('Failed to load quiz data:', error);
     }
   }
 };

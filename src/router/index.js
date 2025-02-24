@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import SplashView from '@/views/SplashView.vue'
 import WelcomeView from '@/views/WelcomeView.vue'
 import QuizView from '@/views/QuizView.vue'
+import ResultsView from '@/views/ResultView.vue' // Import ResultsView
 
 const router = createRouter({
   history: createWebHistory(),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: '/quiz',
       name: 'quiz',
       component: QuizView
+    },
+    {
+      path: '/results',
+      name: 'results',
+      component: ResultsView // Add ResultsView route
     }
   ]
 })

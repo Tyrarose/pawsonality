@@ -1,0 +1,34 @@
+{
+    "breeds": [
+      { "name": "Golden Retriever", "personality": ["S", "P", "D"] },
+      { "name": "Labrador Retriever", "personality": ["S", "P", "A"] },
+      { "name": "Corgi", "personality": ["S", "P", "M"] },
+      { "name": "Border Collie", "personality": ["S", "I", "H"] },
+      { "name": "Poodle", "personality": ["M", "P", "I"] },
+      { "name": "Dachshund", "personality": ["M", "P", "W"] },
+      { "name": "French Bulldog", "personality": ["M", "P", "C"] },
+      { "name": "Jack Russell Terrier", "personality": ["M", "P", "H"] },
+      { "name": "Beagle", "personality": ["P", "C", "D"] },
+      { "name": "Siberian Husky", "personality": ["P", "H", "D"] },
+      { "name": "German Shepherd", "personality": ["B", "H", "D"] },
+      { "name": "Akita", "personality": ["B", "S", "W"] },
+      { "name": "Doberman Pinscher", "personality": ["B", "H", "P"] },
+      { "name": "Great Dane", "personality": ["B", "C", "P"] },
+      { "name": "Newfoundland", "personality": ["B", "C", "H"] },
+      { "name": "Chow Chow", "personality": ["B", "S", "C"] },
+      { "name": "Saint Bernard", "personality": ["B", "C", "W"] }
+    ],
+    "personalities": {
+      "S": "Social",
+      "P": "Playful",
+      "D": "Devoted",
+      "A": "Affectionate",
+      "M": "Mischievous",
+      "I": "Intelligent",
+      "W": "Watchful",
+      "C": "Calm",
+      "H": "Hardworking",
+      "B": "Brave"
+    }
+  }
+  
