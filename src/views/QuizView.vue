@@ -52,16 +52,19 @@ export default {
         PawgressBar
     },
     data() {
-        return {
-            chapter: 1,
-            isTransitioning: false, 
-            quiz: [],
-            selectedOption: null,
-            traitScores: {}, // Track scores for each trait
-            dogBreeds: [], // Load dog breed data
-            readingTimeout: 3000
-        };
-    },
+    return {
+        chapter: 1,
+        isTransitioning: false, 
+        quiz: [],
+        selectedOption: null,
+        traitScores: {}, // Track scores for each trait
+        dogBreeds: [], // Load dog breed data
+        readingTimeout: 3000,
+        selections: [], // Track user selections
+        startTime: null,
+        restartCount: localStorage.getItem('quizRestartCount') || 0
+    };
+},
     computed: {
         currentChapter() {
             return this.quiz.find(chapter => chapter.chapter === this.chapter) || null;
@@ -72,30 +75,56 @@ export default {
         return { router };
     },
     methods: {
+        mounted() {
+    window.addEventListener('beforeunload', this.handleDropOff);
+    this.startTime = Date.now();
+},
+methods: {
+    handleDropOff() {
+        if (this.selections.length > 0) {
+            localStorage.setItem('lastDropOff', JSON.stringify({
+                timestamp: Date.now(),
+                progress: this.chapter
+            }));
+        }
+    }
+},
+beforeUnmount() {
+    window.removeEventListener('beforeunload', this.handleDropOff);
+},
         selectOption(option) {
-            if (this.isTransitioning) return;
+    if (this.isTransitioning) return;
 
-            this.selectedOption = option;
+    this.selectedOption = option;
 
-            // Increment the score for the selected trait
-            this.traitScores[option.trait] = (this.traitScores[option.trait] || 0) + 1;
+    // Track selection with timestamp
+    this.selections.push({
+        question: this.currentChapter.title,
+        option: option.text,
+        timestamp: Date.now()
+    });
 
-            this.isTransitioning = true;
+    // Save to localStorage in case user drops off
+    localStorage.setItem('quizSelections', JSON.stringify(this.selections));
 
-            const readingTime = Math.max(2, option.friend.length / 10) * 1000;
+    this.traitScores[option.trait] = (this.traitScores[option.trait] || 0) + 1;
+    this.isTransitioning = true;
 
-            this.$nextTick(() => {
-                setTimeout(() => {
-                    if (this.chapter < this.quiz.length) {
-                        this.chapter++;
-                        this.selectedOption = null;
-                    } else {
-                        this.calculatePersonalityType();
-                    }
-                    this.isTransitioning = false;
-                }, readingTime);
-            });
-        },
+    const readingTime = Math.max(2, option.friend.length / 10) * 1000;
+
+    this.$nextTick(() => {
+        setTimeout(() => {
+            if (this.chapter < this.quiz.length) {
+                this.chapter++;
+                this.selectedOption = null;
+            } else {
+                this.calculatePersonalityType();
+            }
+            this.isTransitioning = false;
+        }, readingTime);
+    });
+},
+
         async loadQuizData() {
             try {
                 const response = await fetch('/data/quizData.json');

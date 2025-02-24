@@ -27,34 +27,64 @@
 </template>
 
 <script>
-export default {
-  name: 'ResultView',
-  data() {
-    return {
-      progress: 0,
-      breed: ''
-    };
-  },
-  mounted() {
-    this.startLoading();
-    this.breed = this.$route.query.breed || 'Unknown Breed'; // Get breed from route params
-  },
-  methods: {
-    startLoading() {
-      const steps = [8, 85, 90, 100];
-      let index = 0;
+import { supabase } from '@/api/supabase';
 
-      const interval = setInterval(() => {
-        if (index < steps.length) {
-          this.progress = steps[index];
-          index++;
-        } else {
-          clearInterval(interval);
+export default {
+    data() {
+        return {
+            progress: 0,
+            breed: '',
+            selections: [],
+            startTime: null
+        };
+    },
+    async mounted() {
+        this.startLoading();
+        this.breed = this.$route.query.breed || 'Unknown Breed';
+        this.startTime = localStorage.getItem('quizStartTime') || Date.now();
+        this.selections = JSON.parse(localStorage.getItem('quizSelections')) || [];
+
+        await this.saveQuizResult();
+    },
+    methods: {
+        async saveQuizResult() {
+            const endTime = Date.now();
+            const completionTime = Math.round((endTime - this.startTime) / 1000);
+            const referralSource = document.referrer || 'Direct';
+            const deviceType = this.getDeviceType();
+            const browserType = this.getBrowserType();
+            const restartCount = parseInt(localStorage.getItem('quizRestartCount')) || 0;
+
+            const { error } = await supabase.from('quiz_results').insert([
+                {
+                    breed: this.breed,
+                    selections: this.selections,
+                    completion_time: completionTime,
+                    referral_source: referralSource,
+                    device_type: deviceType,
+                    browser_type: browserType,
+                    restart_count: restartCount,
+                    timestamp: new Date()
+                }
+            ]);
+
+            if (error) console.error('Error saving quiz result:', error);
+        },
+        getDeviceType() {
+            if (window.innerWidth < 768) return 'Mobile';
+            if (window.innerWidth < 1024) return 'Tablet';
+            return 'Desktop';
+        },
+        getBrowserType() {
+            const userAgent = navigator.userAgent;
+            if (userAgent.includes('Chrome')) return 'Chrome';
+            if (userAgent.includes('Safari')) return 'Safari';
+            if (userAgent.includes('Firefox')) return 'Firefox';
+            return 'Other';
         }
-      }, 800);
     }
-  }
 };
+
 </script>
 
 <style scoped>
