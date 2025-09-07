@@ -62,7 +62,7 @@ export default {
         alt="dog logo" 
         class="object-contain w-40 h-40 mx-auto tilting-dog"
       />
-      <h1 v-if="!buttonClicked" class="font-gulfs kern-tight text-white text-4xl">{{ h1Text }}</h1>
+      <h1 v-if="!buttonClicked" class="font-cherrybomb kern-tight text-white text-4xl">{{ h1Text }}</h1>
       <div v-if="!buttonClicked" class="space-y-6">
         <h6 class="font-odri kern-normal leading-tight text-white text-4xl">{{ h6Text1 }}</h6>
         <h6 class="font-odri kern-normal text-white text-4xl leading-[0.6]">{{ h6Text2 }}</h6>

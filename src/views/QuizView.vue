@@ -6,7 +6,7 @@
         <transition name="dissolve" mode="out-in">
             <div v-if="currentChapter" :key="chapter" class="content-wrapper">
                 <div class="chapter-content">
-                    <h1 class="font-gulfs text-white text-4xl text-center mb-4">
+                    <h1 class="font-cherrybomb text-white text-4xl text-center mb-4">
                         {{ currentChapter.title }}
                     </h1>
                     <p class="font-odri text-white text-4xl lg:text-6xl kern-normal leading-[0.7] text-center mb-8">
@@ -75,56 +75,55 @@ export default {
         return { router };
     },
     methods: {
+        beforeUnmount() {
+            window.removeEventListener('beforeunload', this.handleDropOff);
+        },
         mounted() {
-    window.addEventListener('beforeunload', this.handleDropOff);
-    this.startTime = Date.now();
-},
-methods: {
-    handleDropOff() {
-        if (this.selections.length > 0) {
-            localStorage.setItem('lastDropOff', JSON.stringify({
-                timestamp: Date.now(),
-                progress: this.chapter
-            }));
-        }
-    }
-},
-beforeUnmount() {
-    window.removeEventListener('beforeunload', this.handleDropOff);
-},
-        selectOption(option) {
-    if (this.isTransitioning) return;
-
-    this.selectedOption = option;
-
-    // Track selection with timestamp
-    this.selections.push({
-        question: this.currentChapter.title,
-        option: option.text,
-        timestamp: Date.now()
-    });
-
-    // Save to localStorage in case user drops off
-    localStorage.setItem('quizSelections', JSON.stringify(this.selections));
-
-    this.traitScores[option.trait] = (this.traitScores[option.trait] || 0) + 1;
-    this.isTransitioning = true;
-
-    const readingTime = Math.max(2, option.friend.length / 10) * 1000;
-
-    this.$nextTick(() => {
-        setTimeout(() => {
-            if (this.chapter < this.quiz.length) {
-                this.chapter++;
-                this.selectedOption = null;
-            } else {
-                this.calculatePersonalityType();
+            window.addEventListener('beforeunload', this.handleDropOff);
+            this.startTime = Date.now();
+            localStorage.setItem('quizStartTime', this.startTime);
+        },
+        handleDropOff() {
+            if (this.selections.length > 0) {
+                localStorage.setItem('lastDropOff', JSON.stringify({
+                    timestamp: Date.now(),
+                    progress: this.chapter
+                }));
             }
-            this.isTransitioning = false;
-        }, readingTime);
-    });
-},
+        },
+        selectOption(option) {
+            if (this.isTransitioning) return;
 
+            this.selectedOption = option;
+
+            // Track selection with timestamp
+            this.selections.push({
+                question: this.currentChapter.title,
+                option: option.text,
+                timestamp: Date.now(),
+                order: this.selections.length + 1
+            });
+
+            // Save to localStorage in case user drops off
+            localStorage.setItem('quizSelections', JSON.stringify(this.selections));
+
+            this.traitScores[option.trait] = (this.traitScores[option.trait] || 0) + 1;
+            this.isTransitioning = true;
+
+            const readingTime = Math.max(2, option.friend.length / 10) * 1000;
+
+            this.$nextTick(() => {
+                setTimeout(() => {
+                    if (this.chapter < this.quiz.length) {
+                        this.chapter++;
+                        this.selectedOption = null;
+                    } else {
+                        this.calculatePersonalityType();
+                    }
+                    this.isTransitioning = false;
+                }, readingTime);
+            });
+        },
         async loadQuizData() {
             try {
                 const response = await fetch('/data/quizData.json');

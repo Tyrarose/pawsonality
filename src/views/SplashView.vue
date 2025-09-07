@@ -9,7 +9,7 @@
         alt="dog logo" 
         class="object-contain w-80 h-80 mx-auto tilting-dog"
       />
-      <h1 class="font-gulfs text-white text-5xl mt-5">Pawsonality</h1>
+      <h1 class="font-cherrybomb text-white text-5xl mt-5">Pawsonality</h1>
       <h6 class="font-odri text-white text-5xl mt-2">Dog Breed Personality Type Quiz</h6>
 
       <!-- Custom Progress Bar -->

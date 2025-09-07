@@ -8,3 +8,5 @@ if (!supabaseUrl || !supabaseKey) {
 }
 
 export const supabase = createClient(supabaseUrl, supabaseKey); 
+
+// https://supabase.com/dashboard/project/jxodilogfyttbxipudox/editor

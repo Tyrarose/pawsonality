@@ -1,6 +1,6 @@
 <template>
   <button 
-      class="bg-brand-cards font-gulfs text-brand-brown rounded-lg flex items-center gap-2 custom-button"
+      class="bg-brand-cards font-cherrybomb text-brand-brown rounded-lg flex items-center gap-2 custom-button"
       @click="handleClick"
       @mousedown="isPressed = true"
       @mouseup="isPressed = false"

@@ -19,3 +19,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'LilitaOne';
+    src: url('/fonts/LilitaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CherryBombOne';
+    src: url('/fonts/CherryBombOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
